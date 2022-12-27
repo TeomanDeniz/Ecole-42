@@ -3,8 +3,13 @@
 
 Example:
 ```c
-#include  <stdio.h> // printf()
-#include  "ft_rand.c" // ft_rand()
+#include  <stdio.h> /*
+ * printf(char *__, ...);
+ */
+
+#include  "ft_rand.c" /*
+ * ft_rand(int min, int max);
+ */
 
 int main(void)
 {
