@@ -52,7 +52,7 @@ bonus: files_n_calculator $(OBJ) files_bonus_n_calculator $(B_OBJ)
 c: clean
 clear: clear
 clean:
-	@rm -f *.o
+	@rm -f $(OBJ)
 	@echo ""
 	@echo " $(shell tput setaf 15)$(shell tput setab 1)Clearing Objective Files$(shell tput sgr0)"
 	@echo ""
