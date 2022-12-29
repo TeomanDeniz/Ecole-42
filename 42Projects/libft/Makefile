@@ -70,10 +70,10 @@ n: norminette
 norm: norminette
 norminette:
 	@echo ""
-	@echo "$(shell tput setab 10)$(shell tput setaf 0) Checking Norminette Rules $(shell tput sgr0)"
-	@norminette *.c | grep ': OK!' -v || printf '\n$(tput setab 10)$(tput setaf 15) Scripts OK! $(shell tput sgr0)\n'
+	@echo " $(shell tput setab 10)$(shell tput setaf 0) Checking Norminette Rules $(shell tput sgr0)"
+	@norminette $(SRC) $(B_SRC) | grep ': OK!' -v || printf '\n$(tput setab 10)$(tput setaf 15) Scripts OK! $(shell tput sgr0)\n'
 	@echo ""
-	@echo "$(shell tput setab 11)$(shell tput setaf 0) Checking Header Norminette Rules $(shell tput sgr0)"
+	@echo " $(shell tput setab 11)$(shell tput setaf 0) Checking Header Norminette Rules $(shell tput sgr0)"
 	@norminette -R CheckDefine *.h | grep ': OK!' -v || printf '\n$(tput setab 10)$(tput setaf 15) Headers OK! $(shell tput sgr0)\n'
 
 files_n_calculator:
