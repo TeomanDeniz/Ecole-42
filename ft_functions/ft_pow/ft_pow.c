@@ -13,7 +13,7 @@
 long long
 	ft_pow(register long long base, register signed int power)
 {
-	register volatile signed int	i;
+	register volatile signed int		i;
 	register volatile long long	x;
 
 	i = 1;
