@@ -19,8 +19,8 @@
 long long
 	ft_pow(register long long base, register signed int power)
 {
-	register signed int	i;
-	register long long	x;
+	register volatile signed int	i;
+	register volatile long long	x;
 
 	i = 1;
 	x = base;
@@ -29,7 +29,7 @@ long long
 	return (base);
 }
 
-int
+static inline int
 	ft_n_set(int *is_neg, int *num_dig, int *res_index, long long *input)
 {
 	long long	temp;
@@ -51,7 +51,7 @@ int
 	return (temp);
 }
 
-void
+static inline void
 	ft_notation_if(int *digits_before_decimal, int *exponent, int *num_digits)
 {
 	*digits_before_decimal = *num_digits - 1;
@@ -67,7 +67,7 @@ void
 		*digits_before_decimal -= 1;
 }
 
-char
+static inline char
 	*ft_notation_end(char *res, int *var)
 {
 	register int	size;
