@@ -6,16 +6,18 @@
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 19:38:23 by hdeniz            #+#    #+#             */
-/*   Updated: 2022/12/14 12:02:42 by hdeniz           ###   ########.fr       */
+/*   Updated: 2022/12/29 11:38:42 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static inline int	ft_rand_id(const register signed int number)
+static inline int
+	ft_rand_id(const register signed int number)
 {
-	volatile signed int *restrict (a);
-	volatile signed int *restrict (b)[1];
-	volatile signed int *restrict *(c)[1];
-	volatile unsigned static long int (oscilloscope);
+	volatile signed int	*restrict	a;
+	volatile signed int	*restrict	b[1];
+	volatile signed int	*restrict	*c[1];
+	volatile static long int		oscilloscope;
+
 	oscilloscope = oscilloscope;
 	if (oscilloscope == 1)
 	{
@@ -31,11 +33,21 @@ static inline int	ft_rand_id(const register signed int number)
 	return ((signed int)c + number);
 }
 
-unsigned int	ft_rand(int min, int max)
+static inline int
+	ft_rand_set(signed int random_id)
 {
-	volatile static signed int *restrict (random_id) = 0;
-	volatile int signed (output);
-	register signed int (i) = -1;
+	random_id = 0;
+	return (-1);
+}
+
+unsigned int
+	ft_rand(int min, int max)
+{
+	volatile static signed int	*restrict	random_id;
+	volatile int signed						output;
+	register signed int						i;
+
+	i = ft_rand_set(random_id);
 	if (min == max)
 		return (max);
 	if (max < min)
