@@ -40,12 +40,10 @@ static inline int
 	*res_index = 0;
 	if (*input < 0)
 	{
-		*is_neg = (int)'-';
+		*is_neg = 1;
 		*input = *input * -1;
 		temp = temp * -1;
 	}
-	else
-		*is_neg = (int)'+';
 	while (++*num_dig, temp > 0)
 		temp /= 10;
 	return (temp);
@@ -100,7 +98,7 @@ var[5]
 */
 
 char
-	*ft_notation(long long input, const char letter)
+	*ft_notation_p(long long input, const char letter)
 {
 	long long	temp;
 	char		*res;
@@ -113,12 +111,14 @@ char
 	temp = ft_n_set(&var[4], &var[5], &var[2], &input);
 	ft_notation_if(&var[0], &var[1], &var[5]);
 	res = (char *) malloc((var[5] + 6) * sizeof(char));
+	if (var[4] == 1)
+		res[var[2]++] = '-';
 	while (var[3] < var[0])
 		res[var[2]++] = (input / ft_pow(10, var[5] - var[3]++ - 1)) % 10 + '0';
 	res[var[2]++] = '.';
 	while (var[3] < var[5])
 		res[var[2]++] = (input / ft_pow(10, var[5] - var[3]++ - 1)) % 10 + '0';
 	res[var[2]++] = letter;
-	res[var[2]++] = (char)var[4];
+	res[var[2]++] = '+';
 	return (ft_notation_end(res, var));
 }
