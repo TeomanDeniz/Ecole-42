@@ -6,7 +6,7 @@
 #    By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 23:15:03 by hdeniz            #+#    #+#              #
-#    Updated: 2022/12/20 14:25:29 by hdeniz           ###   ########.fr        #
+#    Updated: 2023/01/03 16:14:29 by hdeniz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC			=	gcc
 FLAGS		=	-Wall -Wextra -Werror
 SRC			=	$(shell find . -type f ! -name "ft_lst*.c" -name "ft_*.c")
 OBJ			=	$(SRC:.c=.o)
-B_SRC		=	$(wildcard ft_lst*.c)
+B_SRC		=	$(shell find . -type f -name "ft_lst*.c")
 B_OBJ		=	$(B_SRC:.c=.o)
 N_FILES		:=	0
 FILES_N		:=	0
