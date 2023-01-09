@@ -15,8 +15,11 @@
 void
 	pf__perc(int *flags)
 {
-	pf_flag_event(flags, '%', NULL, 'a');
+	char	*dummy_pointer;
+
+	dummy_pointer = "%";
+	pf_flag_event(flags, '%', dummy_pointer, 'a');
 	write(1, "%", 1);
 	flags[1] += 1;
-	pf_flag_event(flags, '%', NULL, 'b');
+	pf_flag_event(flags, '%', dummy_pointer, 'b');
 }
