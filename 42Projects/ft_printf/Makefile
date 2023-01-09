@@ -29,7 +29,7 @@ define progress_bar
 endef
 
 a: all
-all: $(NAME)
+all: $(NAME) clean
 
 %.o: %.c
 	$(eval FILES_N := $(shell echo $(FILES_N)+1 | bc))
