@@ -13,8 +13,6 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include	<stdio.h>
-
 # include	<unistd.h> /*
 	write(fd, str, size);
 	read(fd, str, size);
