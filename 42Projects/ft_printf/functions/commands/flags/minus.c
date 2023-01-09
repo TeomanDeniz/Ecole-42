@@ -12,11 +12,17 @@
 
 #include	"../../../ft_printf.h"
 
+static inline char
+	*r(void)
+{
+	return ("dif-");
+}
+
 void
 	minus(int *flags, char c)
 {
-	if (!(c == 'd' || c == 'i' || c == 'f') || !flags[3])
+	if (!(c == r()[0] || c == r()[1] || c == r()[2]) || !flags[3])
 		return ;
-	write(1, "-", 1);
+	write(1, &r()[3], 1);
 	flags[1] += 1;
 }
