@@ -67,6 +67,8 @@ norminette:
 	@echo "$(shell tput setab 11)$(shell tput setaf 0) Checking Header Norminette Rules $(shell tput sgr0)"
 	@norminette -R CheckDefine *.h
 
+bonus: re
+
 files_n_calculator:
 	@echo "$(shell tput sgr0)"
 	@echo ""
@@ -75,4 +77,4 @@ files_n_calculator:
 
 re: fclean all
 
-.PHONY: all a clean clear c fclean fclear fc re norminette norm n
+.PHONY: all a clean clear c fclean fclear fc re norminette norm n bonus
