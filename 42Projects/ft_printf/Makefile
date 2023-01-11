@@ -6,7 +6,7 @@
 #    By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 23:15:03 by hdeniz            #+#    #+#              #
-#    Updated: 2023/01/11 11:35:23 by hdeniz           ###   ########.fr        #
+#    Updated: 2023/01/09 12:12:59 by hdeniz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,10 +15,7 @@ CC			=	gcc
 FLAGS		=	-Wall -Wextra -Werror
 
 SRC			=	$(shell find functions -type f -name '*.c') ft_printf.c
-B_SRC		=	$(shell find functions -type f -name '*.c') ft_printf_bonus.c
-
 OBJ			=	$(SRC:.c=.o)
-B_OBJ		=	$(B_SRC:.c=.o)
 
 N_FILES		:=	0
 FILES_N		:=	0
@@ -30,22 +27,22 @@ define progress_bar
 	$(eval PSEQ := $(shell seq 0 1 $(PLEFT) 2>/dev/null))
 	$(eval PEMPTY := $(shell if [ "$(1)" -ne "$(2)" ]; then printf "░%.0s" $(PSEQ); fi))
 	$(eval PFILL := $(shell printf "█%.0s" $(shell seq 1 $(PDONE))))
-	@printf "\r $(shell tput setaf 11)[$(shell tput setaf 14)$(PFILL)$(PEMPTY)$(shell tput setaf 11)] $(PBAR)%% - $(shell tput setaf 10)[$(1)/$(2)]$(shell tput setaf 11) [$(shell tput setaf 13)$(3)$(shell tput setaf 11)]                                                      "
+	@printf "\r $(shell tput setaf 11)[$(shell tput setaf 14)$(PFILL)$(PEMPTY)$(shell tput setaf 11)] $(PBAR)%% - $(shell tput setaf 10)[$(1)/$(2)]$(shell tput setaf 11) [$(shell tput setaf 13)$(3)$(shell tput setaf 11)]                                             "
 endef
 
 a: all
-all: norminette files_n_calculator $(OBJ) $(NAME) clean
+all: norminette $(NAME) clean
 
 b: bonus
-bonus: norminette fclean bonus_files_n_calculator $(B_OBJ) $(NAME) clean
+bonus: fclean norminette $(NAME) clean
 
 %.o: %.c
 	$(eval FILES_N := $(shell echo $(FILES_N)+1 | bc))
 	$(call progress_bar,$(FILES_N),$(N_FILES),$<)
 	@$(CC) $(FLAGS) -c $< -o $@
 
-$(NAME):
-	@ar -rcs $(NAME) *.o
+$(NAME): files_n_calculator $(OBJ)
+	@ar -rcs $(NAME) $(OBJ)
 	@echo " $(shell tput setab 2)$(shell tput setaf 15)$(NAME) Done !$(shell tput sgr0)"
 	@echo ""
 
@@ -80,12 +77,6 @@ files_n_calculator:
 	@echo ""
 	$(eval FILES_N := 0)
 	$(eval N_FILES := $(shell echo $(SRC) | wc -w | sed "s/ //g" | bc))
-
-bonus_files_n_calculator:
-	@echo "$(shell tput sgr0)"
-	@echo ""
-	$(eval FILES_N := 0)
-	$(eval N_FILES := $(shell echo $(B_SRC) | wc -w | sed "s/ //g" | bc))
 
 re: fclean all
 
