@@ -31,8 +31,6 @@ void
 		flags[1] += 2;
 		return ;
 	}
-	(void)"This place means octal with '#' flag";
-	(void)"aka: '%o' command lol";
 	write(1, "0", 1);
 	flags[1] += 1;
 }
