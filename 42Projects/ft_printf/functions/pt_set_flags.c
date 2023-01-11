@@ -31,13 +31,15 @@ int
 	flags['8'] = 0;
 	flags['9'] = 0;
 	flags[4] = 0;
-	(void)"For get leng of the output. Used in the pt_set_flags()";
 	flags[3] = 0;
-	(void)"For get if number is minus '-' or not. Used in the pt_set_flags()";
 	flags[2] = 0;
-	(void)"For count the padding nurmal number. Used on everywhere lol";
 	return (0);
 }
+
+// flags[1] -> number of characters writen to screen
+// flags[2] -> the number used for  padding flag like: "%5d"
+// flags[3] -> (Used in: pf_flag_event) Check if the number is minus or not.
+// flags[4] -> (Used in: pf_flag_event) Get the size of the value if its number.
 
 /*
  * For give or reset the variables of the global array "g_flags"
