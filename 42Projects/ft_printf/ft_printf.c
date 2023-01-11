@@ -12,10 +12,80 @@
 
 #include	"ft_printf.h"
 
-// flags[1] -> number of characters writen to screen
-// flags[2] -> the number used for  padding flag like: "%5d"
-// flags[3] -> (Used in: pf_flag_event) Check if the number is minus or not.
-// flags[4] -> (Used in: pf_flag_event) Get the size of the value if its number.
+static inline void
+	pf_do_command(va_list v_args, const char *(__), int x, int *flags)
+{
+	if ((__)[x] == 's')
+		pf__s(va_arg(v_args, char *), flags);
+	else if ((__)[x] == 'c')
+		pf__c(va_arg(v_args, int), flags);
+	else if ((__)[x] == 'd' || (__)[x] == 'i')
+		pf__d(va_arg(v_args, int), flags);
+	else if ((__)[x] == 'p')
+		pf__p((long long)va_arg(v_args, void *), flags);
+	else if ((__)[x] == 'u')
+		pf__u(va_arg(v_args, unsigned int), flags);
+	else if ((__)[x] == 'x' || (__)[x] == 'X')
+		pf__x(va_arg(v_args, unsigned int), (__)[x], flags);
+	else if ((__)[x] == 'o')
+		pf__o(va_arg(v_args, unsigned int), flags);
+	else if ((__)[x] == 'b')
+		pf__b(va_arg(v_args, unsigned int), flags);
+	else if ((__)[x] == '%')
+		pf__perc(flags);
+	else if ((__)[x] == 'f')
+		pf__f(va_arg(v_args, double), flags);
+	else if ((__)[x] == 'n')
+		pf__n(va_arg(v_args, int *), flags);
+}
+
+static inline int
+	pf_perc(const char *(__), int x, va_list v_args, int *flags)
+{
+	register int	test;
+
+	test = pf_is_flag_valid((__), (x + 1), 1, flags);
+	pf_flag_collector((__), &x, flags);
+	if (test != 0 && test != -1)
+	{
+		x++;
+		pf_do_command(v_args, (__), (x - 1), flags);
+	}
+	if (test == -1)
+		x -= 1;
+	pf_set_flags(flags);
+	return (x);
+}
+
+int
+	ft_printf(const char *(__), ...)
+{
+	int				flags[256];
+	va_list			v_args;
+	register int	x;
+
+	x = pf_set_flags(flags);
+	flags[1] = 0;
+	va_start(v_args, (__));
+	while ((__)[x] != '\0')
+	{
+		if ((__)[x] == '%')
+		{
+			x = pf_perc((__), x, v_args, flags);
+			if (x == -1 || (__)[x] == '\0' || (__)[x - 1] == '\0')
+				break ;
+			continue ;
+		}
+		else
+		{
+			flags[1] += 1;
+			write(1, &(__)[x], 1);
+		}
+		x++;
+	}
+	va_end(v_args);
+	return (flags[1]);
+}
 
 /*---------------------------------*
 | c -> character => "t"            |
@@ -95,78 +165,3 @@
 |   %#15.4o ==> "           0052"  [15] |
 |    %#15.o ==> "            052"  [15] |
 *--------------------------------------*/
-
-static inline void
-	pf_do_command(va_list v_args, const char *(__), int x, int *flags)
-{
-	if ((__)[x] == 's')
-		pf__s(va_arg(v_args, char *), flags);
-	else if ((__)[x] == 'c')
-		pf__c(va_arg(v_args, int), flags);
-	else if ((__)[x] == 'd' || (__)[x] == 'i')
-		pf__d(va_arg(v_args, int), flags);
-	else if ((__)[x] == 'p')
-		pf__p((long long)va_arg(v_args, void *), flags);
-	else if ((__)[x] == 'u')
-		pf__u(va_arg(v_args, unsigned int), flags);
-	else if ((__)[x] == 'x' || (__)[x] == 'X')
-		pf__x(va_arg(v_args, unsigned int), (__)[x], flags);
-	else if ((__)[x] == 'o')
-		pf__o(va_arg(v_args, unsigned int), flags);
-	else if ((__)[x] == 'b')
-		pf__b(va_arg(v_args, unsigned int), flags);
-	else if ((__)[x] == '%')
-		pf__perc(flags);
-	else if ((__)[x] == 'f')
-		pf__f(va_arg(v_args, double), flags);
-	else if ((__)[x] == 'n')
-		pf__n(va_arg(v_args, int *), flags);
-}
-
-static inline int
-	pf_perc(const char *(__), int x, va_list v_args, int *flags)
-{
-	register int	test;
-
-	test = pf_is_flag_valid((__), (x + 1), 1, flags);
-	pf_flag_collector((__), &x, flags);
-	if (test != 0 && test != -1)
-	{
-		x++;
-		pf_do_command(v_args, (__), (x - 1), flags);
-	}
-	if (test == -1)
-		x -= 1;
-	pf_set_flags(flags);
-	return (x);
-}
-
-int
-	ft_printf(const char *(__), ...)
-{
-	int				flags[256];
-	va_list			v_args;
-	register int	x;
-
-	x = pf_set_flags(flags);
-	flags[1] = 0;
-	va_start(v_args, (__));
-	while ((__)[x] != '\0')
-	{
-		if ((__)[x] == '%')
-		{
-			x = pf_perc((__), x, v_args, flags);
-			if (x == -1 || (__)[x] == '\0' || (__)[x - 1] == '\0')
-				break ;
-			continue ;
-		}
-		else
-		{
-			flags[1] += 1;
-			write(1, &(__)[x], 1);
-		}
-		x++;
-	}
-	va_end(v_args);
-	return (flags[1]);
-}
