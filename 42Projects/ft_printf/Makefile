@@ -6,17 +6,15 @@
 #    By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 23:15:03 by hdeniz            #+#    #+#              #
-#    Updated: 2023/01/09 12:12:59 by hdeniz           ###   ########.fr        #
+#    Updated: 2023/01/11 17:12:59 by hdeniz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	libftprintf.a
 CC			=	gcc
 FLAGS		=	-Wall -Wextra -Werror
-
 SRC			=	$(shell find functions -type f -name '*.c') ft_printf.c
 OBJ			=	$(SRC:.c=.o)
-
 N_FILES		:=	0
 FILES_N		:=	0
 
@@ -30,11 +28,11 @@ define progress_bar
 	@printf "\r $(shell tput setaf 11)[$(shell tput setaf 14)$(PFILL)$(PEMPTY)$(shell tput setaf 11)] $(PBAR)%% - $(shell tput setaf 10)[$(1)/$(2)]$(shell tput setaf 11) [$(shell tput setaf 13)$(3)$(shell tput setaf 11)]                                             "
 endef
 
+all: $(NAME)
 a: all
-all: norminette $(NAME) clean
 
 b: bonus
-bonus: fclean norminette $(NAME) clean
+bonus: $(NAME)
 
 %.o: %.c
 	$(eval FILES_N := $(shell echo $(FILES_N)+1 | bc))
