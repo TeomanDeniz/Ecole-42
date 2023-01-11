@@ -6,7 +6,7 @@
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 16:37:46 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/01/11 11:37:47 by hdeniz           ###   ########.fr       */
+/*   Updated: 2023/01/11 16:37:47 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,10 @@ static inline int
 	calculator = dot_calculation(flags, c, number);
 	if ((c == 'd' || c == 'i' || c == 'f') && flags['+'] && !flags[3])
 		calculator += 1;
-	(void)"-42 => -";
 	if ((c == 'd' || c == 'i' || c == 'f') && flags[3])
 		calculator += 1;
 	if ((c == 'd' || c == 'i' || c == 'f') && flags[' '] && !flags['+'] \
-		&& !flags[4])
+		&& !flags[3])
 		calculator += 1;
 	if (((c == 'x' || c == 'X' || c == 'b') && flags['#'] && number != 0) \
 		|| c == 'p')
