@@ -6,15 +6,20 @@
 #    By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 23:15:03 by hdeniz            #+#    #+#              #
-#    Updated: 2023/01/05 16:36:43 by hdeniz           ###   ########.fr        #
+#    Updated: 2023/01/11 11:35:23 by hdeniz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	libftprintf.a
 CC			=	gcc
 FLAGS		=	-Wall -Wextra -Werror
+
 SRC			=	$(shell find functions -type f -name '*.c') ft_printf.c
+B_SRC		=	$(shell find functions -type f -name '*.c') ft_printf_bonus.c
+
 OBJ			=	$(SRC:.c=.o)
+B_OBJ		=	$(B_SRC:.c=.o)
+
 N_FILES		:=	0
 FILES_N		:=	0
 
@@ -29,15 +34,18 @@ define progress_bar
 endef
 
 a: all
-all: $(NAME) clean
+all: norminette files_n_calculator $(OBJ) $(NAME) clean
+
+b: bonus
+bonus: norminette fclean bonus_files_n_calculator $(B_OBJ) $(NAME) clean
 
 %.o: %.c
 	$(eval FILES_N := $(shell echo $(FILES_N)+1 | bc))
 	$(call progress_bar,$(FILES_N),$(N_FILES),$<)
 	@$(CC) $(FLAGS) -c $< -o $@
 
-$(NAME): files_n_calculator $(OBJ)
-	@ar -rcs $(NAME) $(OBJ)
+$(NAME):
+	@ar -rcs $(NAME) *.o
 	@echo " $(shell tput setab 2)$(shell tput setaf 15)$(NAME) Done !$(shell tput sgr0)"
 	@echo ""
 
@@ -67,14 +75,18 @@ norminette:
 	@echo "$(shell tput setab 11)$(shell tput setaf 0) Checking Header Norminette Rules $(shell tput sgr0)"
 	@norminette -R CheckDefine *.h
 
-bonus: re
-
 files_n_calculator:
 	@echo "$(shell tput sgr0)"
 	@echo ""
 	$(eval FILES_N := 0)
 	$(eval N_FILES := $(shell echo $(SRC) | wc -w | sed "s/ //g" | bc))
 
+bonus_files_n_calculator:
+	@echo "$(shell tput sgr0)"
+	@echo ""
+	$(eval FILES_N := 0)
+	$(eval N_FILES := $(shell echo $(B_SRC) | wc -w | sed "s/ //g" | bc))
+
 re: fclean all
 
-.PHONY: all a clean clear c fclean fclear fc re norminette norm n bonus
+.PHONY: all a clean clear c fclean fclear fc re norminette norm n bonus b
