@@ -13,6 +13,17 @@
 #include	"../ft_printf.h"
 
 static inline int
+	get_star(int *flags, va_list v_args)
+{
+	register int	star_value;
+
+	star_value = va_arg(v_args, int);
+	if (star_value < 0)
+		flags['-'] = 1;
+	return (ft_abs(star_value));
+}
+
+static inline int
 	get_number(const char *(__), int *x)
 {
 	char			result[8192];
@@ -42,9 +53,15 @@ static inline void
 }
 
 static inline void
-	dot_checker(const char *(__), int *x, int *flags)
+	dot_checker(const char *(__), int *x, int *flags, va_list v_args)
 {
 	*x += 1;
+	if ((__)[*x] == '*')
+	{
+		flags['.'] = get_star(flags, v_args);
+		*x += 1;
+		return ;
+	}
 	while ((__)[*x] == '0')
 		*x += 1;
 	if ((__)[*x] >= '1' && (__)[*x] <= '9')
@@ -54,7 +71,7 @@ static inline void
 }
 
 void
-	pf_flag_collector(const char *(__), int *x, int *flags)
+	pf_flag_collector(const char *(__), int *x, int *flags, va_list v_args)
 {
 	register int	flag;
 
@@ -68,8 +85,13 @@ void
 			flags[(int)flag] = 1;
 			*x += 1;
 		}
+		if (flag == '*')
+		{
+			flags[2] = get_star(flags, v_args);
+			*x += 1;
+		}
 		if (flag == '.')
-			dot_checker((__), x, flags);
+			dot_checker((__), x, flags, v_args);
 		if (flag >= '1' && flag <= '9')
 			padding_checker((__), x, flags);
 		flag = pf_perc_check((__), *x);

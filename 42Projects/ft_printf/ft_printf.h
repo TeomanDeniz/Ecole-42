@@ -6,17 +6,26 @@
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 11:31:44 by hdeniz            #+#    #+#             */
-/*   Updated: 2022/12/23 11:46:22 by hdeniz           ###   ########.fr       */
+/*   Updated: 2023/01/09 11:33:31 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include	<unistd.h> /*
+# ifdef _WIN32
+#  include	<io.h> /*
+	_write(fd, str, size);
+	_read(fd, str, size);
+*/
+//# define write _write
+//# define read _read
+# else
+#  include	<unistd.h> /*
 	write(fd, str, size);
 	read(fd, str, size);
 */
+# endif
 
 # include	<stdarg.h> /*
 	va_list v_arg;
@@ -33,9 +42,9 @@
 */
 
 // FT_PRINTF FUNCTIONS
+void	pf_flag_collector(const char *(__), int *x, int *flags, va_list v_args);
 void	pf_base_out(register long long number, const char *base, int *flags);
 void	pf_base_out_int(register int number, const char *base, int *flags);
-void	pf_flag_collector(const char *(__), int *x, int *flags);
 void	pf_flag_event(int *flags, char c, void *o, char p);
 
 int		pf_is_flag_valid(const char *(__), int x, int reset_flags, int *flags);

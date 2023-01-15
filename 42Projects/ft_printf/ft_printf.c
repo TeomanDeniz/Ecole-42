@@ -45,7 +45,7 @@ static inline int
 	register int	test;
 
 	test = pf_is_flag_valid((__), (x + 1), 1, flags);
-	pf_flag_collector((__), &x, flags);
+	pf_flag_collector((__), &x, flags, v_args);
 	if (test != 0 && test != -1)
 	{
 		x++;
