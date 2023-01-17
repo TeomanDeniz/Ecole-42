@@ -1,6 +1,5 @@
-<P ALIGN="CENTER"><IMG SRC="https://cdn.discordapp.com/attachments/630843149778157623/1064886989964443731/125.png"></P>
-
 # ft_printf
+<P ALIGN="CENTER"><IMG STYLE="WIDTH: 100PX; HEIGHT: 100PX;" SRC="https://cdn.discordapp.com/attachments/630843149778157623/1064886989964443731/125.png"></P>
 
 | COMMAND | VALID FLAGS       | EXPLANATION                    | HOW TO USE |
 | ------- | ----------------- | ------------------------------ | ---------- |
