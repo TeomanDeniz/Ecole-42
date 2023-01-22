@@ -49,6 +49,7 @@ void	pf_flag_event(int *flags, char c, void *o, char p);
 
 int		pf_is_flag_valid(const char *(__), int x, int reset_flags, int *flags);
 int		pf_perc_check(const char *(__), int x);
+int		pf_set_flags_fd(int *flags, int fd);
 int		pf_set_flags(int *flags);
 // FT_PRINTF FUNCTIONS
 
@@ -67,7 +68,7 @@ void	pf__perc(int *flags);
 // FT_PRINTF COMMANDS
 
 // FT_PRINTF FLAGS
-void	padding(int *flags, char c, char p, long long number);
+void	margin(int *flags, char c, char p, long long number);
 void	square(int *flags, char c, long long number);
 void	minus(int *flags, char c);
 void	space(int *flags, char c);
