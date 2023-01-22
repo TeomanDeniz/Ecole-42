@@ -13,20 +13,20 @@
 #include	"../../ft_printf.h"
 
 static inline void
-	send_number(int index, int *len, char c, int write)
+	send_number(int index, int *len, char c, int fd)
 {
-	if (write)
+	if (fd != 0)
 	{
 		if (c == 'X')
-			ft_putchar("0123456789ABCDEF"[index]);
+			ft_putchar_fd("0123456789ABCDEF"[index], fd);
 		else
-			ft_putchar("0123456789abcdef"[index]);
+			ft_putchar_fd("0123456789abcdef"[index], fd);
 	}
 	*len += 1;
 }
 
 int
-	ft_itoa_base(unsigned long long n, int b, char c)
+	ft_itoa_base(unsigned long long n, int b, char c, int fd)
 {
 	int	number_list[0x1000];
 	int	index;
@@ -47,12 +47,12 @@ int
 		n = n / b;
 	}
 	while (index--)
-		send_number(number_list[index], &len, c, 1);
+		send_number(number_list[index], &len, c, fd);
 	return (len);
 }
 
 int
-	ft_itoa_base_int(unsigned int n, int b, char c)
+	ft_itoa_base_int(unsigned int n, int b, char c, int fd)
 {
 	int	number_list[0x1000];
 	int	index;
@@ -73,7 +73,7 @@ int
 		n = n / b;
 	}
 	while (index--)
-		send_number(number_list[index], &len, c, 1);
+		send_number(number_list[index], &len, c, fd);
 	return (len);
 }
 
