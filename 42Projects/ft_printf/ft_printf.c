@@ -79,7 +79,7 @@ int
 		else
 		{
 			flags[1] += 1;
-			write(1, &(__)[x], 1);
+			write(flags[0], &(__)[x], 1);
 		}
 		x++;
 	}
