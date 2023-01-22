@@ -23,6 +23,6 @@ void
 {
 	if (!(c == r()[0] || c == r()[1] || c == r()[2]) || !flags[3])
 		return ;
-	write(1, &r()[3], 1);
+	write(flags[0], &r()[3], 1);
 	flags[1] += 1;
 }
