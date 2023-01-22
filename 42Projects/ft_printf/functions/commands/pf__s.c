@@ -20,7 +20,7 @@ void
 	counter = 0;
 	if (!string)
 	{
-		write(1, "(null)", 6);
+		write(flags[0], "(null)", 6);
 		flags[1] += 6;
 		return ;
 	}
@@ -28,14 +28,14 @@ void
 	if (flags['.'] == -1)
 	{
 		flags[1] += ft_strlen(string);
-		write(1, string, ft_strlen(string));
+		write(flags[0], string, ft_strlen(string));
 	}
 	else
 	{	
 		while (string[counter] && counter < flags['.'])
 		{
 			flags[1] += 1;
-			write(1, &string[counter++], 1);
+			write(flags[0], &string[counter++], 1);
 		}
 	}
 	pf_flag_event(flags, 's', (void *)string, 'b');
