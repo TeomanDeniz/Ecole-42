@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   padding.c                                          :+:      :+:    :+:   */
+/*   margin.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -28,7 +28,7 @@ static inline int
 }
 
 static inline int
-	padding_calculator(int *flags, char c, long long number)
+	margin_calculator(int *flags, char c, long long number)
 {
 	int	calculator;
 
@@ -50,7 +50,7 @@ static inline int
 }
 
 void
-	padding(int *flags, char c, char p, long long number)
+	margin(int *flags, char c, char p, long long number)
 {
 	register int	counter;
 
@@ -59,7 +59,7 @@ void
 		return ;
 	while (counter < padding_calculator(flags, c, number))
 	{
-		write(1, " ", 1);
+		write(flags[0], " ", 1);
 		flags[1] += 1;
 		counter++;
 	}
