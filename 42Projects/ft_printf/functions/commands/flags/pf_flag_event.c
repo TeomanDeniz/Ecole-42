@@ -48,7 +48,7 @@ void
 	if (p == 'a')
 	{
 		if (!flags['-'])
-			padding(flags, command, p, (long long)*(int *)object);
+			margin(flags, command, p, (long long)*(int *)object);
 		minus(flags, command);
 		plus(flags, command);
 		square(flags, command, (long long)*(int *)object);
@@ -56,6 +56,6 @@ void
 		dot(flags, command);
 	}
 	if (p == 'b' && flags['-'] == 1)
-		padding(flags, command, p, (long long)*(int *)object);
+		margin(flags, command, p, (long long)*(int *)object);
 	flags[4] = 0;
 }
