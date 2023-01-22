@@ -46,8 +46,8 @@ int
 }
 
 // flags[0] -> fd
-// flags[1] -> number of characters writen to screen
-// flags[2] -> the number used for  padding flag like: "%5d"
+// flags[1] -> Number of characters writen to screen
+// flags[2] -> The number used for margin flag like: "%5d"
 // flags[3] -> (Used in: pf_flag_event) Check if the number is minus or not.
 // flags[4] -> (Used in: pf_flag_event) Get the size of the value if its number.
 
