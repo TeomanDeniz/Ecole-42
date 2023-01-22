@@ -35,7 +35,7 @@ static inline long
 	while (counter++ <= zeros_at_start - while_stopper)
 	{
 		flags[1] += 1;
-		ft_putchar('0');
+		ft_putchar_fd('0', flags[0]);
 	}
 	return (while_stopper);
 }
@@ -59,16 +59,16 @@ static inline void
 
 	fraction = 0;
 	integer = (long)number;
-	ft_putnbr(integer);
+	ft_putnbr_fd(integer, flags[0]);
 	if (flags['.'] != 0)
 	{
 		fraction = get_fraction(integer, number, flags);
 		if (fraction % 10 == 9)
 			fraction += 1;
-		ft_putchar('.');
+		ft_putchar_fd('.', flags[0]);
 		checker = zero_counter(number, flags, 1);
 		if (fraction != -1 && checker == 1)
-			ft_putnbr(fraction);
+			ft_putnbr_fd(fraction, flags[0]);
 		flags[1] += ft_strlen(ft_itoa(integer)) + \
 			ft_strlen(ft_itoa(ft_abs(fraction)));
 	}
