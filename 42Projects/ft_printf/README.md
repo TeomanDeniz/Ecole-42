@@ -1,5 +1,10 @@
-# ft_printf
+# ft_printf + ft_printf_fd
 <P ALIGN="CENTER"><IMG STYLE="WIDTH: 100PX; HEIGHT: 100PX;" SRC="https://cdn.discordapp.com/attachments/630843149778157623/1064886989964443731/125.png"></P>
+
+```c
+int ft_printf(const char *(__), ...);
+int ft_printf_fd(int fd, const char *(__), ...);
+```
 
 | COMMAND | VALID FLAGS       | EXPLANATION                    | HOW TO USE | KEYWORDS               |
 | ------- | ----------------- | ------------------------------ | ---------- | ---------------------- |
