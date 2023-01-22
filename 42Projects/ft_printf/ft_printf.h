@@ -90,8 +90,8 @@ void	ft_putstr(char *string);
 
 char	*ft_itoa(long number);
 
-int		ft_itoa_base(unsigned long long n, int b, char c);
-int		ft_itoa_base_int(unsigned int n, int b, char c);
+int		ft_itoa_base(unsigned long long n, int b, char c, int fd);
+int		ft_itoa_base_int(unsigned int n, int b, char c, int fd);
 int		ft_ibl(unsigned long long n, int b, char c);
 int		ft_ibil(unsigned int n, int b, char c);
 int		ft_printf(const char *(__), ...);
