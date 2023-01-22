@@ -19,7 +19,7 @@ void
 
 	dummy_pointer = "%";
 	pf_flag_event(flags, '%', dummy_pointer, 'a');
-	write(1, "%", 1);
+	write(flags[0], "%", 1);
 	flags[1] += 1;
 	pf_flag_event(flags, '%', dummy_pointer, 'b');
 }
