@@ -24,7 +24,7 @@ void
 	{
 		while (counter < flags['.'] - (flags[4] + (c == 'p') * 2))
 		{
-			write(1, "0", 1);
+			write(flags[0], "0", 1);
 			flags[1] += 1;
 			counter++;
 		}
@@ -34,7 +34,7 @@ void
 	{
 		while (counter < (flags[2] - (flags[4] + flags[3] + (c == 'p') * 2)))
 		{
-			write(1, "0", 1);
+			write(flags[0], "0", 1);
 			flags[1] += 1;
 			counter++;
 		}
