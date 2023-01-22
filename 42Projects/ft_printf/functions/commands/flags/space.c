@@ -18,6 +18,6 @@ void
 	if (!(c == 'd' || c == 'i' || c == 'f') || !flags[' '] || flags['+'] \
 		|| flags[3])
 		return ;
-	write(1, " ", 1);
+	write(flags[0], " ", 1);
 	flags[1] += 1;
 }
