@@ -33,9 +33,19 @@ int
 	flags[4] = 0;
 	flags[3] = 0;
 	flags[2] = 0;
+	flags[0] = 1;
 	return (0);
 }
 
+int
+	pf_set_flags_fd(int *flags, int fd)
+{
+	pf_set_flags(flags);
+	flags[0] = fd;
+	return (0);
+}
+
+// flags[0] -> fd
 // flags[1] -> number of characters writen to screen
 // flags[2] -> the number used for  padding flag like: "%5d"
 // flags[3] -> (Used in: pf_flag_event) Check if the number is minus or not.
