@@ -17,20 +17,20 @@ void
 {
 	if (c == 'p')
 	{
-		write(1, "0x", 2);
+		write(flags[0], "0x", 2);
 		flags[1] += 2;
 	}
 	if (!(c == 'o' || c == 'x' || c == 'X' || c == 'b') \
 		|| !flags['#'] || (flags[2] > flags[4] + flags['#'] && flags['0'] \
 			&& flags['.'] == -1 && !flags['-']) || (number == 0 && c != 'o'))
 		return ;
-	if (c == 'x' || c == 'X' || c == 'b' || c == 'p')
+	if (c == 'x' || c == 'X' || c == 'b')
 	{
-		write(1, "0", 1);
-		write(1, &c, 1);
+		write(flags[0], "0", 1);
+		write(flags[0], &c, 1);
 		flags[1] += 2;
 		return ;
 	}
-	write(1, "0", 1);
+	write(flags[0], "0", 1);
 	flags[1] += 1;
 }
