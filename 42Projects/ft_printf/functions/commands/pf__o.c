@@ -16,6 +16,6 @@ void
 	pf__o(int number, int *flags)
 {
 	pf_flag_event(flags, 'o', (void *)&number, 'a');
-	flags[1] += ft_itoa_base_int(number, 8, 'o');
+	flags[1] += ft_itoa_base_int(number, 8, 'o', flags[0]);
 	pf_flag_event(flags, 'o', (void *)&number, 'b');
 }
