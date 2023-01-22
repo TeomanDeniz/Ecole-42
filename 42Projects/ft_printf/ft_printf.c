@@ -87,6 +87,36 @@ int
 	return (flags[1]);
 }
 
+int
+	ft_printf_fd(int fd, const char *(__), ...)
+{
+	int				flags[256];
+	va_list			v_args;
+	register int	x;
+
+	x = pf_set_flags_fd(flags, fd);
+	flags[1] = 0;
+	va_start(v_args, (__));
+	while ((__)[x] != '\0')
+	{
+		if ((__)[x] == '%')
+		{
+			x = pf_perc((__), x, v_args, flags);
+			if (x == -1 || (__)[x] == '\0' || (__)[x - 1] == '\0')
+				break ;
+			continue ;
+		}
+		else
+		{
+			flags[1] += 1;
+			write(flags[0], &(__)[x], 1);
+		}
+		x++;
+	}
+	va_end(v_args);
+	return (flags[1]);
+}
+
 /*---------------------------------*
 | c -> character => "t"            |
 | s ->    string => "testing"      |
