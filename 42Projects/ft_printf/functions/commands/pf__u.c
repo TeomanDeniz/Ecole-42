@@ -16,6 +16,6 @@ void
 	pf__u(unsigned long number, int *flags)
 {
 	pf_flag_event(flags, 'u', (void *)&number, 'a');
-	flags[1] += ft_itoa_base(number, 10, 'u');
+	flags[1] += ft_itoa_base(number, 10, 'u', flags[0]);
 	pf_flag_event(flags, 'u', (void *)&number, 'b');
 }
