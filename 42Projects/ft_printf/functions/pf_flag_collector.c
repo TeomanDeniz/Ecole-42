@@ -44,7 +44,7 @@ static inline int
 }
 
 static inline void
-	padding_checker(const char *(__), int *x, int *flags)
+	margin_checker(const char *(__), int *x, int *flags)
 {
 	if ((__)[*x] >= '1' && (__)[*x] <= '9')
 		flags[2] = get_number((__), x);
@@ -93,7 +93,7 @@ void
 		if (flag == '.')
 			dot_checker((__), x, flags, v_args);
 		if (flag >= '1' && flag <= '9')
-			padding_checker((__), x, flags);
+			margin_checker((__), x, flags);
 		flag = pf_perc_check((__), *x);
 	}
 }
