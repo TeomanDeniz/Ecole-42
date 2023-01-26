@@ -6,7 +6,7 @@
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 11:21:55 by hdeniz            #+#    #+#             */
-/*   Updated: 2022/12/23 14:42:28 by hdeniz           ###   ########.fr       */
+/*   Updated: 2023/01/26 15:22:28 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static inline void
 	else if ((__)[x] == 'd' || (__)[x] == 'i')
 		pf__d(va_arg(v_args, int), flags);
 	else if ((__)[x] == 'p')
-		pf__p((long long)va_arg(v_args, void *), flags);
+		pf__p(va_arg(v_args, long long), flags);
 	else if ((__)[x] == 'u')
 		pf__u(va_arg(v_args, unsigned int), flags);
 	else if ((__)[x] == 'x' || (__)[x] == 'X')
