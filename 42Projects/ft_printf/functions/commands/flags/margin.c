@@ -6,7 +6,7 @@
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 16:37:46 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/01/11 16:37:47 by hdeniz           ###   ########.fr       */
+/*   Updated: 2023/01/26 15:21:47 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void
 	counter = 0;
 	if (p == 'a' && flags['0'] && flags['.'] == -1)
 		return ;
-	while (counter < padding_calculator(flags, c, number))
+	while (counter < margin_calculator(flags, c, number))
 	{
 		write(flags[0], " ", 1);
 		flags[1] += 1;
