@@ -6,18 +6,18 @@
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 19:38:37 by hdeniz            #+#    #+#             */
-/*   Updated: 2022/12/28 19:43:51 by hdeniz           ###   ########.fr       */
+/*   Updated: 2023/01/27 19:43:51 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"../ft_printf.h"
 
 static inline int
-	get_star(int *flags, va_list v_args)
+	get_star(int *flags, va_list *va_args)
 {
 	register int	star_value;
 
-	star_value = va_arg(v_args, int);
+	star_value = va_arg(*va_args, int);
 	if (star_value < 0)
 		flags['-'] = 1;
 	return (ft_abs(star_value));
@@ -53,12 +53,12 @@ static inline void
 }
 
 static inline void
-	dot_checker(const char *(__), int *x, int *flags, va_list v_args)
+	dot_checker(const char *(__), int *x, int *flags, va_list *va_args)
 {
 	*x += 1;
 	if ((__)[*x] == '*')
 	{
-		flags['.'] = get_star(flags, v_args);
+		flags['.'] = get_star(flags, va_args);
 		*x += 1;
 		return ;
 	}
@@ -71,7 +71,7 @@ static inline void
 }
 
 void
-	pf_flag_collector(const char *(__), int *x, int *flags, va_list v_args)
+	pf_flag_collector(const char *(__), int *x, int *flags, va_list *va_args)
 {
 	register int	flag;
 
@@ -87,11 +87,11 @@ void
 		}
 		if (flag == '*')
 		{
-			flags[2] = get_star(flags, v_args);
+			flags[2] = get_star(flags, va_args);
 			*x += 1;
 		}
 		if (flag == '.')
-			dot_checker((__), x, flags, v_args);
+			dot_checker((__), x, flags, va_args);
 		if (flag >= '1' && flag <= '9')
 			margin_checker((__), x, flags);
 		flag = pf_perc_check((__), *x);
