@@ -64,7 +64,7 @@ int
 	va_list			va_args;
 	register int	x;
 
-	x = pf_set_flags(flags);
+	x = pf_set_flags_fd(flags, 1);
 	flags[1] = 0;
 	va_start(va_args, (__));
 	while ((__)[x] != '\0')
