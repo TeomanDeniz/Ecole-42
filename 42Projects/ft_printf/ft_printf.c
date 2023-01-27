@@ -13,43 +13,43 @@
 #include	"ft_printf.h"
 
 static inline void
-	pf_do_command(va_list v_args, const char *(__), int x, int *flags)
+	pf_do_command(va_list *va_args, const char *(__), int x, int *flags)
 {
 	if ((__)[x] == 's')
-		pf__s(va_arg(v_args, char *), flags);
+		pf__s(va_arg(*va_args, char *), flags);
 	else if ((__)[x] == 'c')
-		pf__c(va_arg(v_args, int), flags);
+		pf__c(va_arg(*va_args, int), flags);
 	else if ((__)[x] == 'd' || (__)[x] == 'i')
-		pf__d(va_arg(v_args, int), flags);
+		pf__d(va_arg(*va_args, int), flags);
 	else if ((__)[x] == 'p')
-		pf__p(va_arg(v_args, long long), flags);
+		pf__p(va_arg(*va_args, long long), flags);
 	else if ((__)[x] == 'u')
-		pf__u(va_arg(v_args, unsigned int), flags);
+		pf__u(va_arg(*va_args, unsigned int), flags);
 	else if ((__)[x] == 'x' || (__)[x] == 'X')
-		pf__x(va_arg(v_args, unsigned int), (__)[x], flags);
+		pf__x(va_arg(*va_args, unsigned int), (__)[x], flags);
 	else if ((__)[x] == 'o')
-		pf__o(va_arg(v_args, unsigned int), flags);
+		pf__o(va_arg(*va_args, unsigned int), flags);
 	else if ((__)[x] == 'b')
-		pf__b(va_arg(v_args, unsigned int), flags);
+		pf__b(va_arg(*va_args, unsigned int), flags);
 	else if ((__)[x] == '%')
 		pf__perc(flags);
 	else if ((__)[x] == 'f')
-		pf__f(va_arg(v_args, double), flags);
+		pf__f(va_arg(*va_args, double), flags);
 	else if ((__)[x] == 'n')
-		pf__n(va_arg(v_args, int *), flags);
+		pf__n(va_arg(*va_args, int *), flags);
 }
 
 static inline int
-	pf_perc(const char *(__), int x, va_list v_args, int *flags)
+	pf_perc(const char *(__), int x, va_list *va_args, int *flags)
 {
 	register int	test;
 
 	test = pf_is_flag_valid((__), (x + 1), 1, flags);
-	pf_flag_collector((__), &x, flags, v_args);
+	pf_flag_collector((__), &x, flags, va_args);
 	if (test != 0 && test != -1)
 	{
 		x++;
-		pf_do_command(v_args, (__), (x - 1), flags);
+		pf_do_command(va_args, (__), (x - 1), flags);
 	}
 	if (test == -1)
 		x -= 1;
@@ -61,17 +61,17 @@ int
 	ft_printf(const char *(__), ...)
 {
 	int				flags[256];
-	va_list			v_args;
+	va_list			va_args;
 	register int	x;
 
 	x = pf_set_flags(flags);
 	flags[1] = 0;
-	va_start(v_args, (__));
+	va_start(va_args, (__));
 	while ((__)[x] != '\0')
 	{
 		if ((__)[x] == '%')
 		{
-			x = pf_perc((__), x, v_args, flags);
+			x = pf_perc((__), x, &va_args, flags);
 			if (x == -1 || (__)[x] == '\0' || (__)[x - 1] == '\0')
 				break ;
 			continue ;
@@ -83,7 +83,7 @@ int
 		}
 		x++;
 	}
-	va_end(v_args);
+	va_end(va_args);
 	return (flags[1]);
 }
 
@@ -91,17 +91,17 @@ int
 	ft_printf_fd(int fd, const char *(__), ...)
 {
 	int				flags[256];
-	va_list			v_args;
+	va_list			va_args;
 	register int	x;
 
 	x = pf_set_flags_fd(flags, fd);
 	flags[1] = 0;
-	va_start(v_args, (__));
+	va_start(va_args, (__));
 	while ((__)[x] != '\0')
 	{
 		if ((__)[x] == '%')
 		{
-			x = pf_perc((__), x, v_args, flags);
+			x = pf_perc((__), x, &va_args, flags);
 			if (x == -1 || (__)[x] == '\0' || (__)[x - 1] == '\0')
 				break ;
 			continue ;
@@ -113,7 +113,7 @@ int
 		}
 		x++;
 	}
-	va_end(v_args);
+	va_end(va_args);
 	return (flags[1]);
 }
 
