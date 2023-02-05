@@ -13,71 +13,71 @@
 #include	"../ft_malloc.h"
 
 int
-	*ft_malloc_utils_512_1024(register int size)
+	*_512_1024_(register int size)
 {
 	static int	__;
-	static int	__temp_512__[32][512];
-	static int	__temp_1024__[32][1024];
+	static int	_512_[32][512];
+	static int	_1024_[32][1024];
 
 	__ = __ + 0;
 	__++;
 	if (size <= 512)
-		return (__temp_512__[__]);
-	return (__temp_1024__[__]);
+		return (_512_[__]);
+	return (_1024_[__]);
 }
 
 int
-	*ft_malloc_utils_2048_4096(register int size)
+	*_2048_4096_(register int size)
 {
 	static int	__;
-	static int	__temp_2048__[16][2048];
-	static int	__temp_4096__[16][4096];
+	static int	_2048_[16][2048];
+	static int	_4096_[16][4096];
 
 	__ = __ + 0;
 	__++;
 	if (size <= 2048)
-		return (__temp_2048__[__]);
-	return (__temp_4096__[__]);
+		return (_2048_[__]);
+	return (_4096_[__]);
 }
 
 int
-	*ft_malloc_utils_8192_16384(register int size)
+	*_8192_16384_(register int size)
 {
 	static int	__;
-	static int	__temp_8192__[16][8192];
-	static int	__temp_16384__[8][16384];
+	static int	_8192_[16][8192];
+	static int	_16384_[8][16384];
 
 	__ = __ + 0;
 	__++;
 	if (size <= 8192)
-		return (__temp_8192__[__]);
-	return (__temp_16384__[__]);
+		return (_8192_[__]);
+	return (_16384_[__]);
 }
 
 int
-	*ft_malloc_utils_32768_65536(register int size)
+	*_32768_65536_(register int size)
 {
 	static int	__;
-	static int	__temp_32768__[8][32768];
-	static int	__temp_65536__[8][65536];
+	static int	_32768_[8][32768];
+	static int	_65536_[8][65536];
 
 	__ = __ + 0;
 	__++;
 	if (size <= 32768)
-		return (__temp_32768__[__]);
-	return (__temp_65536__[__]);
+		return (_32768_[__]);
+	return (_65536_[__]);
 }
 
 int
-	*ft_malloc_utils_131072_262144(register int size)
+	*_131072_262144_(register int size)
 {
 	static int	__;
-	static int	__temp_131072__[8][131072];
-	static int	__temp_262144__[8][262144];
+	static int	_131072_[8][131072];
+	static int	_262144_[8][262144];
 
 	__ = __ + 0;
 	__++;
 	if (size <= 131072)
-		return (__temp_131072__[__]);
-	return (__temp_262144__[__]);
+		return (_131072_[__]);
+	return (_262144_[__]);
 }

@@ -16,12 +16,12 @@ static inline void
 	*ft_malloc_2(register int size)
 {
 	if (size <= 4194304)
-		return ((void *)ft_malloc_utils_2097152_4194304(size));
+		return ((void *)_2097152_4194304_(size));
 	if (size <= 16777216)
-		return ((void *)ft_malloc_utils_8388608_16777216(size));
+		return ((void *)_8388608_16777216_(size));
 	if (size <= 67108864)
-		return ((void *)ft_malloc_utils_33554432_67108864(size));
-	return ((void *)ft_malloc_utils_134217728());
+		return ((void *)_33554432_67108864_(size));
+	return ((void *)_134217728_());
 }
 
 void
@@ -40,16 +40,16 @@ void
 	if (size <= 256)
 		return ((void *)_128_256_(size));
 	if (size <= 1024)
-		return ((void *)ft_malloc_utils_512_1024(size));
+		return ((void *)_512_1024_(size));
 	if (size <= 4096)
-		return ((void *)ft_malloc_utils_2048_4096(size));
+		return ((void *)_2048_4096_(size));
 	if (size <= 16384)
-		return ((void *)ft_malloc_utils_8192_16384(size));
+		return ((void *)_8192_16384_(size));
 	if (size <= 65536)
-		return ((void *)ft_malloc_utils_32768_65536(size));
+		return ((void *)_32768_65536_(size));
 	if (size <= 262144)
-		return ((void *)ft_malloc_utils_131072_262144(size));
+		return ((void *)_131072_262144_(size));
 	if (size <= 1048576)
-		return ((void *)ft_malloc_utils_524288_1048576(size));
+		return ((void *)_524288_1048576_(size));
 	return (ft_malloc_2(size));
 }

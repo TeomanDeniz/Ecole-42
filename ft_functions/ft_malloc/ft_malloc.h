@@ -18,16 +18,16 @@ int		*_2_4_(register int size);
 int		*_8_16_(register int size);
 int		*_32_64_(register int size);
 int		*_128_256_(register int size);
-int		*ft_malloc_utils_512_1024(register int size);
-int		*ft_malloc_utils_2048_4096(register int size);
-int		*ft_malloc_utils_8192_16384(register int size);
-int		*ft_malloc_utils_32768_65536(register int size);
-int		*ft_malloc_utils_131072_262144(register int size);
-int		*ft_malloc_utils_524288_1048576(register int size);
-int		*ft_malloc_utils_2097152_4194304(register int size);
-int		*ft_malloc_utils_8388608_16777216(register int size);
-int		*ft_malloc_utils_33554432_67108864(register int size);
-int		*ft_malloc_utils_134217728(void);
+int		*_512_1024_(register int size);
+int		*_2048_4096_(register int size);
+int		*_8192_16384_(register int size);
+int		*_32768_65536_(register int size);
+int		*_131072_262144_(register int size);
+int		*_524288_1048576_(register int size);
+int		*_2097152_4194304_(register int size);
+int		*_8388608_16777216_(register int size);
+int		*_33554432_67108864_(register int size);
+int		*_134217728_(void);
 void	*ft_malloc(register int size);
 
 #endif
