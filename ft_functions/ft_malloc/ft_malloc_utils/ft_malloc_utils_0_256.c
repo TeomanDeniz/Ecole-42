@@ -6,63 +6,79 @@
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 18:00:09 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/02/04 22:02:36 by hdeniz           ###   ########.fr       */
+/*   Updated: 2023/02/05 06:04:18 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"../ft_malloc.h"
+#include	<stdio.h>
 
 int
-	*ft_malloc_utils_0_1(register int size)
+	*_0_1_(register int size)
 {
-	static int	__temp_0__[0];
-	static int	__temp_1__[1];
+	static int	__;
+	static int	__temp_0__[4096][0];
+	static int	__temp_1__[4096][1];
 
+	__ = __ + 0;
+	__++;
 	if (size == 0)
-		return (__temp_0__);
-	return (__temp_1__);
+		return (__temp_0__[__]);
+	return (__temp_1__[__]);
 }
 
 int
-	*ft_malloc_utils_2_4(register int size)
+	*_2_4_(register int size)
 {
-	static int	__temp_2__[2];
-	static int	__temp_4__[4];
+	static int	__;
+	static int	__temp_2__[4096][2];
+	static int	__temp_4__[4096][4];
 
+	__ = __ + 0;
+	__++;
 	if (size <= 2)
-		return (__temp_2__);
-	return (__temp_4__);
+		return (__temp_2__[__]);
+	return (__temp_4__[__]);
 }
 
 int
-	*ft_malloc_utils_8_16(register int size)
+	*_8_16_(register int size)
 {
-	static int	__temp_8__[8];
-	static int	__temp_16__[16];
+	static int	__;
+	static int	__temp_8__[4096][8];
+	static int	__temp_16__[4096][16];
 
+	__ = __ + 0;
+	__++;
 	if (size <= 8)
-		return (__temp_8__);
-	return (__temp_16__);
+		return (__temp_8__[__]);
+	return (__temp_16__[__]);
 }
 
 int
-	*ft_malloc_utils_32_64(register int size)
+	*_32_64_(register int size)
 {
-	static int	__temp_32__[32];
-	static int	__temp_64__[64];
+	static int	__;
+	static int	_32_[4096][32];
+	static int	_64_[4096][64];
 
+	__ = __ + 0;
+	__++;
 	if (size <= 32)
-		return (__temp_32__);
-	return (__temp_64__);
+		return (_32_[__]);
+	return (_64_[__]);
 }
 
 int
-	*ft_malloc_utils_128_256(register int size)
+	*_128_256_(register int size)
 {
-	static int	__temp_128__[128];
-	static int	__temp_256__[256];
+	static int	__;
+	static int	__temp_128__[1024][128];
+	static int	__temp_256__[512][256];
 
+	__ = __ + 0;
+	__++;
 	if (size <= 128)
-		return (__temp_128__);
-	return (__temp_256__);
+		return (__temp_128__[__]);
+	return (__temp_256__[__]);
 }
