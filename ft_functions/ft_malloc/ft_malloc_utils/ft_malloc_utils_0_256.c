@@ -16,42 +16,42 @@ int
 	*_0_1_(register int size)
 {
 	static int	__;
-	static int	__temp_0__[4096][0];
-	static int	__temp_1__[4096][1];
+	static int	_0_[4096][0];
+	static int	_1_[4096][1];
 
 	__ = __ + 0;
 	__++;
 	if (size == 0)
-		return (__temp_0__[__]);
-	return (__temp_1__[__]);
+		return (_0_[__]);
+	return (_1_[__]);
 }
 
 int
 	*_2_4_(register int size)
 {
 	static int	__;
-	static int	__temp_2__[4096][2];
-	static int	__temp_4__[4096][4];
+	static int	_2_[4096][2];
+	static int	_4_[4096][4];
 
 	__ = __ + 0;
 	__++;
 	if (size <= 2)
-		return (__temp_2__[__]);
-	return (__temp_4__[__]);
+		return (_2_[__]);
+	return (_4_[__]);
 }
 
 int
 	*_8_16_(register int size)
 {
 	static int	__;
-	static int	__temp_8__[4096][8];
-	static int	__temp_16__[4096][16];
+	static int	_8_[4096][8];
+	static int	_16_[4096][16];
 
 	__ = __ + 0;
 	__++;
 	if (size <= 8)
-		return (__temp_8__[__]);
-	return (__temp_16__[__]);
+		return (_8_[__]);
+	return (_16_[__]);
 }
 
 int
@@ -72,12 +72,12 @@ int
 	*_128_256_(register int size)
 {
 	static int	__;
-	static int	__temp_128__[1024][128];
-	static int	__temp_256__[512][256];
+	static int	_128_[1024][128];
+	static int	_256_[512][256];
 
 	__ = __ + 0;
 	__++;
 	if (size <= 128)
-		return (__temp_128__[__]);
-	return (__temp_256__[__]);
+		return (_128_[__]);
+	return (_256_[__]);
 }
