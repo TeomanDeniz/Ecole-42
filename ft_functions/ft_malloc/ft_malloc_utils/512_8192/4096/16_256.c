@@ -13,33 +13,33 @@
 #include	"../../../ft_malloc.h"
 
 int
-	*_128__16_(register int stack)
+	*_4096__16_(register int stack)
 {
-	static int	_16_[16][128];
+	static int	_16_[16][4096];
 
 	return (_16_[stack]);
 }
 
 int
-	*_128__32_(register int stack)
+	*_4096__32_(register int stack)
 {
-	static int	_32_[32][128];
+	static int	_32_[32][4096];
 
 	return (_32_[stack]);
 }
 
 int
-	*_128__64_(register int stack)
+	*_4096__64_(register int stack)
 {
-	static int	_64_[64][128];
+	static int	_64_[64][4096];
 
 	return (_64_[stack]);
 }
 
 int
-	*_128__128_(register int stack)
+	*_4096__128_(register int stack)
 {
-	static int	_128_[128][128];
+	static int	_128_[128][4096];
 
 	return (_128_[stack]);
 }

@@ -45,7 +45,7 @@ int
 }
 
 int
-	*_4__256_(register int stack)
+	*_8__256_(register int stack)
 {
 	static int	_256_[256][8];
 
