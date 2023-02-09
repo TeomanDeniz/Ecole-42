@@ -6,7 +6,7 @@
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 18:19:06 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/02/05 06:04:18 by hdeniz           ###   ########.fr       */
+/*   Updated: 2023/02/09 21:34:18 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -245,10 +245,6 @@ int		*_67108864__0_(void);
 int		*_67108864__1_(register int stack);
 int		*_67108864__2_(register int stack);
 
-int		*_134217728__0_(void);
-int		*_134217728__1_(register int stack);
-int		*_134217728__2_(register int stack);
-
 int		*_0_(void);
 int		*_1_(void);
 int		*_2_(void);
@@ -282,7 +278,6 @@ int		*_8388608_(void);
 int		*_16777216_(void);
 int		*_33554432_(void);
 int		*_67108864_(void);
-int		*_134217728_(void);
 
 void	*ft_malloc(register int size);
 
