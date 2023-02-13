@@ -17,6 +17,8 @@
 # include	<unistd.h>
 # include	"libft/ft_malloc/ft_malloc.h"
 
+int		ft_strlen(const char *restrict string);
+
 struct s_stacks
 {
 	int	*a;
@@ -40,7 +42,7 @@ void	rrr(struct s_stacks *stacks);
 int		check_if_not_same(char *argv[]);
 int		check_if_only_numbers(char *argv[]);
 
-void	prepare_stacks(struct s_stacks *stacks, char *argv[], int argc);
+void	prepare_stacks(struct s_stacks *stacks, char *argv[], register int ac);
 void	ai(struct s_stacks *stacks);
 
 #endif
