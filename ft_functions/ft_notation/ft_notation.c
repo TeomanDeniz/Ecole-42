@@ -6,12 +6,11 @@
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 19:38:23 by hdeniz            #+#    #+#             */
-/*   Updated: 2022/12/27 11:02:42 by hdeniz           ###   ########.fr       */
+/*   Updated: 2023/02/14 11:58:42 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	<stdlib.h>/*
- * sizeof(KEYWORD)
  * (KEYWORD)malloc(size_t);
  * free(*var);
  */
