@@ -20,8 +20,8 @@ int main(void)
   int x;
 
   x = 42;
-  printf("[   sin = %d]\n", sin(x));
-  printf("[ft_sin = %d]\n", ft_sin(x));
+  printf("[   sin = %f]\n", sin(x));
+  printf("[ft_sin = %f]\n", ft_sin(x));
   return(0);
 }
 ```
