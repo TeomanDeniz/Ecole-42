@@ -20,8 +20,8 @@ int main(void)
   int x;
 
   x = 42;
-  printf("[   cos = %d]\n", cos(x));
-  printf("[ft_cos = %d]\n", ft_cos(x));
+  printf("[   cos = %f]\n", cos(x));
+  printf("[ft_cos = %f]\n", ft_cos(x));
   return(0);
 }
 ```
