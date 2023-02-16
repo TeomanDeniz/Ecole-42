@@ -13,35 +13,35 @@
 #include	"../push_swap.h"
 
 static inline void
-	rrr_rra(struct s_stacks *stacks)
+	rrr_rra(struct s_stacks *stack)
 {
 	int				a_temp;
 	register int	counter;
 
-	counter = stacks->a_size;
-	a_temp = stacks->a[counter - 1];
+	counter = stack->a_size;
+	a_temp = stack->a[counter - 1];
 	while (counter--, counter > 0)
-		stacks->a[counter] = stacks->a[counter - 1];
-	stacks->a[0] = a_temp;
+		stack->a[counter] = stack->a[counter - 1];
+	stack->a[0] = a_temp;
 }
 
 static inline void
-	rrr_rrb(struct s_stacks *stacks)
+	rrr_rrb(struct s_stacks *stack)
 {
 	int				b_temp;
 	register int	counter;
 
-	counter = stacks->b_size;
-	b_temp = stacks->b[counter - 1];
+	counter = stack->b_size;
+	b_temp = stack->b[counter - 1];
 	while (counter--, counter > 0)
-		stacks->b[counter] = stacks->b[counter - 1];
-	stacks->b[0] = b_temp;
+		stack->b[counter] = stack->b[counter - 1];
+	stack->b[0] = b_temp;
 }
 
 void
-	rrr(struct s_stacks *stacks)
+	rrr(struct s_stacks *stack)
 {
-	rrr_rra(stacks);
-	rrr_rrb(stacks);
+	rrr_rra(stack);
+	rrr_rrb(stack);
 	write(1, "rrr\n", 4);
 }

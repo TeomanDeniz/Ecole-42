@@ -68,6 +68,13 @@ fclean: clean
 		echo " $(shell tput setab 1)$(shell tput setaf 11)$(NAME)$(shell tput setaf 15) deleted$(shell tput sgr0)" ; \
 		echo "" ; \
 	fi;
+	@if [ -a $(MAIN:.c=) ]; \
+	then \
+		rm -f $(MAIN:.c=) ; \
+		echo "" ; \
+		echo " $(shell tput setab 1)$(shell tput setaf 11)$(MAIN:.c=)$(shell tput setaf 15) deleted$(shell tput sgr0)" ; \
+		echo "" ; \
+	fi;
 
 n: norminette
 norm: norminette

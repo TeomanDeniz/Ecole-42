@@ -13,12 +13,12 @@
 #include	"../push_swap.h"
 
 void
-	sb(struct s_stacks *stacks)
+	sb(struct s_stacks *stack)
 {
 	register int	temp;
 
-	temp = stacks->b[0];
-	stacks->b[0] = stacks->b[1];
-	stacks->b[1] = temp;
+	temp = stack->b[0];
+	stack->b[0] = stack->b[1];
+	stack->b[1] = temp;
 	write(1, "sb\n", 3);
 }

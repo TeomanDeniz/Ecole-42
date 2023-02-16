@@ -6,7 +6,7 @@
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 18:19:06 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/02/09 21:34:18 by hdeniz           ###   ########.fr       */
+/*   Updated: 2023/02/16 18:16:03 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -208,43 +208,6 @@ int		*_262144__2_(register int stack);
 int		*_262144__4_(register int stack);
 int		*_262144__8_(register int stack);
 
-int		*_524288__0_(void);
-int		*_524288__1_(register int stack);
-int		*_524288__2_(register int stack);
-int		*_524288__4_(register int stack);
-
-int		*_1048576__0_(void);
-int		*_1048576__1_(register int stack);
-int		*_1048576__2_(register int stack);
-int		*_1048576__4_(register int stack);
-
-int		*_2097152__0_(void);
-int		*_2097152__1_(register int stack);
-int		*_2097152__2_(register int stack);
-int		*_2097152__4_(register int stack);
-
-int		*_4194304__0_(void);
-int		*_4194304__1_(register int stack);
-int		*_4194304__2_(register int stack);
-int		*_4194304__4_(register int stack);
-
-int		*_8388608__0_(void);
-int		*_8388608__1_(register int stack);
-int		*_8388608__2_(register int stack);
-int		*_8388608__4_(register int stack);
-
-int		*_16777216__0_(void);
-int		*_16777216__1_(register int stack);
-int		*_16777216__2_(register int stack);
-
-int		*_33554432__0_(void);
-int		*_33554432__1_(register int stack);
-int		*_33554432__2_(register int stack);
-
-int		*_67108864__0_(void);
-int		*_67108864__1_(register int stack);
-int		*_67108864__2_(register int stack);
-
 int		*_0_(void);
 int		*_1_(void);
 int		*_2_(void);
@@ -268,16 +231,6 @@ int		*_32768_(void);
 int		*_65536_(void);
 int		*_131072_(void);
 int		*_262144_(void);
-
-int		*_524288_(void);
-int		*_1048576_(void);
-int		*_2097152_(void);
-int		*_4194304_(void);
-int		*_8388608_(void);
-
-int		*_16777216_(void);
-int		*_33554432_(void);
-int		*_67108864_(void);
 
 void	*ft_malloc(register int size);
 

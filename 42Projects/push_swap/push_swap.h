@@ -11,11 +11,12 @@
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-
 # define PUSH_SWAP_H
 
-# include	<unistd.h>
 # include	"libft/ft_malloc/ft_malloc.h"
+# include	<stdlib.h>
+# include	<stdio.h>
+# include	<unistd.h>
 
 int		ft_strlen(const char *restrict string);
 
@@ -23,26 +24,27 @@ struct s_stacks
 {
 	int	*a;
 	int	*b;
+	int	size;
 	int	a_size;
 	int	b_size;
 };
 
-void	sa(struct s_stacks *stacks);
-void	sb(struct s_stacks *stacks);
-void	ss(struct s_stacks *stacks);
-void	pa(struct s_stacks *stacks);
-void	pb(struct s_stacks *stacks);
-void	ra(struct s_stacks *stacks);
-void	rb(struct s_stacks *stacks);
-void	rr(struct s_stacks *stacks);
-void	rra(struct s_stacks *stacks);
-void	rrb(struct s_stacks *stacks);
-void	rrr(struct s_stacks *stacks);
+void	sa(struct s_stacks *stack);
+void	sb(struct s_stacks *stack);
+void	ss(struct s_stacks *stack);
+void	pa(struct s_stacks *stack);
+void	pb(struct s_stacks *stack);
+void	ra(struct s_stacks *stack);
+void	rb(struct s_stacks *stack);
+void	rr(struct s_stacks *stack);
+void	rra(struct s_stacks *stack);
+void	rrb(struct s_stacks *stack);
+void	rrr(struct s_stacks *stack);
 
 int		check_if_not_same(char *argv[]);
 int		check_if_only_numbers(char *argv[]);
 
-void	prepare_stacks(struct s_stacks *stacks, char *argv[], register int ac);
-void	ai(struct s_stacks *stacks);
+void	prepare_stacks(struct s_stacks *stack, char *argv[]);
+void	ai(struct s_stacks *stack);
 
 #endif

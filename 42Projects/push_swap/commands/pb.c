@@ -13,34 +13,34 @@
 #include	"../push_swap.h"
 
 static inline void
-	listing_b(struct s_stacks *stacks, register int counter)
+	listing_b(struct s_stacks *stack, register int counter)
 {
 	int	*b_temp;
 
-	b_temp = (int *) ft_malloc(stacks->b_size + 1);
-	while (counter++, counter < stacks->b_size)
-			b_temp[counter + 1] = stacks->b[counter];
-	b_temp[0] = stacks->a[0];
-	stacks->b = b_temp;
-	stacks->b_size += 1;
+	b_temp = (int *) ft_malloc(stack->b_size + 1);
+	while (counter++, counter < stack->b_size)
+			b_temp[counter + 1] = stack->b[counter];
+	b_temp[0] = stack->a[0];
+	stack->b = b_temp;
+	stack->b_size += 1;
 }
 
 static inline void
-	listing_a(struct s_stacks *stacks, register int counter)
+	listing_a(struct s_stacks *stack, register int counter)
 {
 	int	*a_temp;
 
-	a_temp = (int *) ft_malloc(stacks->a_size - 1);
-	while (counter++, counter < stacks->a_size)
-		a_temp[counter - 1] = stacks->a[counter];
-	stacks->a = a_temp;
-	stacks->a_size -= 1;
+	a_temp = (int *) ft_malloc(stack->a_size - 1);
+	while (counter++, counter < stack->a_size)
+		a_temp[counter - 1] = stack->a[counter];
+	stack->a = a_temp;
+	stack->a_size -= 1;
 }
 
 void
-	pb(struct s_stacks *stacks)
+	pb(struct s_stacks *stack)
 {
-	listing_b(stacks, -1);
-	listing_a(stacks, 0);
+	listing_b(stack, -1);
+	listing_a(stack, 0);
 	write(1, "pa\n", 3);
 }

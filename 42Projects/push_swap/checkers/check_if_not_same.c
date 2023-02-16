@@ -13,11 +13,10 @@
 #include	"../push_swap.h"
 
 static inline int
-	number_compare(int *numbers_1, register int len)
+	number_compare(int *numbers, register int len)
 {
 	register int	x;
 	register int	y;
-	int				*numbers_2;
 
 	x = -1;
 	y = -1;
@@ -28,7 +27,7 @@ static inline int
 		{
 			if (x == y)
 				continue ;
-			if (numbers_1[x] == numbers_1[y])
+			if (numbers[x] == numbers[y])
 				return (1);
 		}
 	}
@@ -64,8 +63,7 @@ static inline int
 	if (argv[coordinate] != ' ' \
 		&& argv[coordinate] != 9 && argv[coordinate] != 0)
 	{
-		number *= 10;
-		number += argv[coordinate] & 0B1111;
+		number += (number * 10) + (argv[coordinate] & 0B1111);
 		if (argv[coordinate + 1])
 			return (0);
 	}

@@ -6,7 +6,7 @@
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 11:38:23 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/02/14 11:45:42 by hdeniz           ###   ########.fr       */
+/*   Updated: 2023/02/16 18:23:07 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ static inline double
 static inline double
 	cos_fmod(long double x, long double y)
 {
-	while (x >= y)
-		x -= y;
-	return x;
+	return (x - (long)(x / y) * y);
 }
 
 double

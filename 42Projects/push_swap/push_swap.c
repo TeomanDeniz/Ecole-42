@@ -23,19 +23,23 @@ static inline int
 }
 
 int
-	mian(int argc, char *argv[])
+	main(int argc, char *argv[])
 {
 	struct s_stacks	stacks;
+	register int	counter;
 
 	if (argc >= 2)
 	{
-		if (check_if_not_same(argv))
-			return (ps_error(1));
+		counter = 0;
 		if (check_if_only_numbers(argv))
 			return (ps_error(2));
+		if (check_if_not_same(argv))
+			return (ps_error(1));
 		prepare_stacks(&stacks, argv);
 		ai(&stacks);
+		while (++counter, counter < stack->size)
+			printf("%d\n", stack->a[counter]);
 		return (0);
 	}
-	return (error());
+	return (ps_error(3));
 }

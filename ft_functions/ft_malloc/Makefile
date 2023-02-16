@@ -6,7 +6,7 @@
 #    By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 23:15:03 by hdeniz            #+#    #+#              #
-#    Updated: 2023/01/15 15:07:49 by hdeniz           ###   ########.fr        #
+#    Updated: 2023/02/16 18:17:51 by hdeniz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,13 @@ fclean: clean
 		rm -f $(NAME) ; \
 		echo "" ; \
 		echo " $(shell tput setab 1)$(shell tput setaf 11)$(NAME)$(shell tput setaf 15) deleted$(shell tput sgr0)" ; \
+		echo "" ; \
+	fi;
+	@if [ -a $(MAIN:.c=) ]; \
+	then \
+		rm -f $(MAIN:.c=) ; \
+		echo "" ; \
+		echo " $(shell tput setab 1)$(shell tput setaf 11)$(MAIN:.c=)$(shell tput setaf 15) deleted$(shell tput sgr0)" ; \
 		echo "" ; \
 	fi;
 

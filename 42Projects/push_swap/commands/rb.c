@@ -13,15 +13,15 @@
 #include	"../push_swap.h"
 
 void
-	rb(struct s_stacks *stacks)
+	rb(struct s_stacks *stack)
 {
-	int				b_temp;
+	register int	b_temp;
 	register int	counter;
 
 	counter = 0;
-	b_temp = stacks->b[0];
-	while (counter++, counter < stacks->b_size)
-		stacks->b[counter - 1] = stacks->b[counter];
-	stacks->b[counter - 1] = b_temp;
+	b_temp = stack->b[0];
+	while (counter++, counter < stack->b_size)
+		stack->b[counter - 1] = stack->b[counter];
+	stack->b[counter - 1] = b_temp;
 	write(1, "rb\n", 3);
 }

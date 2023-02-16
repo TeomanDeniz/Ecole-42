@@ -13,29 +13,29 @@
 #include	"../push_swap.h"
 
 static inline void
-	ss_sa(struct s_stacks *stacks)
+	ss_sa(struct s_stacks *stack)
 {
 	register int	temp;
 
-	temp = stacks->a[0];
-	stacks->a[0] = stacks->a[1];
-	stacks->a[1] = temp;
+	temp = stack->a[0];
+	stack->a[0] = stack->a[1];
+	stack->a[1] = temp;
 }
 
 static inline void
-	ss_sb(struct s_stacks *stacks)
+	ss_sb(struct s_stacks *stack)
 {
 	register int	temp;
 
-	temp = stacks->b[0];
-	stacks->b[0] = stacks->b[1];
-	stacks->b[1] = temp;
+	temp = stack->b[0];
+	stack->b[0] = stack->b[1];
+	stack->b[1] = temp;
 }
 
 void
-	ss(struct s_stacks *stacks)
+	ss(struct s_stacks *stack)
 {
-	ss_sa(stacks);
-	ss_sb(stacks);
+	ss_sa(stack);
+	ss_sb(stack);
 	write(1, "ss\n", 3);
 }

@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   0_8.c                                              :+:      :+:    :+:   */
+/*   ai.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/04 18:00:09 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/02/07 18:11:18 by hdeniz           ###   ########.fr       */
+/*   Created: 2023/02/15 18:29:52 by hdeniz            #+#    #+#             */
+/*   Updated: 2023/02/15 18:29:53 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../../../ft_malloc.h"
+#include	"../push_swap.h"
 
-int
-	*_33554432__0_(void)
+static inline int
+	all_stacks_are_not_shorted(struct s_stacks *stack)
 {
-	static int	_0_[33554432];
-
-	return (_0_);
+	
 }
 
-int
-	*_33554432__1_(register int stack)
+void
+	ai(struct s_stacks *stack)
 {
-	static int	_1_[1][33554432];
+	while (all_stacks_are_not_shorted(stack))
+	{
 
-	return (_1_[stack]);
-}
-
-int
-	*_33554432__2_(register int stack)
-{
-	static int	_2_[2][33554432];
-
-	return (_2_[stack]);
+	}
 }

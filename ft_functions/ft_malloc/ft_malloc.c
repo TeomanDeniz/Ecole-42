@@ -6,15 +6,13 @@
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 17:09:54 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/02/09 21:35:18 by hdeniz           ###   ########.fr       */
+/*   Updated: 2023/02/16 18:15:30 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"ft_malloc.h"
 
 static inline void	*ft_malloc_2(register int size);
-
-static inline void	*ft_malloc_3(register int size);
 
 void
 	*ft_malloc(register int size)
@@ -65,27 +63,6 @@ static inline void
 		return ((void *)_65536_());
 	if (size <= 131072)
 		return ((void *)_131072_());
-	if (size <= 262144)
-		return ((void *)_262144_());
-	if (size <= 524288)
-		return ((void *)_524288_());
-	if (size <= 1048576)
-		return ((void *)_1048576_());
-	if (size <= 2097152)
-		return ((void *)_2097152_());
-	return (ft_malloc_3(size));
+	return ((void *)_262144_());
 }
 
-static inline void
-	*ft_malloc_3(register int size)
-{
-	if (size <= 4194304)
-		return ((void *)_4194304_());
-	if (size <= 8388608)
-		return ((void *)_8388608_());
-	if (size <= 16777216)
-		return ((void *)_16777216_());
-	if (size <= 33554432)
-		return ((void *)_33554432_());
-	return ((void *)_67108864_());
-}
