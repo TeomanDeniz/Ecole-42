@@ -62,6 +62,9 @@ int main(void)
 	printf("[   cos = %f]\n", cos(x));
 	printf("[ft_cos = %f]\n", ft_cos(x));
 	printf("\n");
+	printf("[   tan = %f]\n", tan(x));
+	printf("[ft_tan = %f]\n", ft_tan(x));
+	printf("\n");
 	printf("[   log10 = %f]\n", log10(x));
 	printf("[ft_log10 = %f]\n", ft_log10(x));
 	printf("\n");
