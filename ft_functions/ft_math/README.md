@@ -6,6 +6,7 @@
 | **[ft_atan](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_atan.c)**   | `double` x                    | Returns the arc tangent of `x`                        |
 | **[ft_cos](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_cos.c)**     | `double` x                    | Returns the cosine of `x`                             |
 | **[ft_atan2](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_atan2.c)** | `double` x, `double` y        | Calculate exponent of `base`                          |
+| **[ft_fabs](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_fabs.c)**   | `double` x                    | Get the absolute value of a `x`                       |
 | **[ft_fmod](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_fmod.c)**   | `double` x, `double` y        | Gets the modalities of 2 numbers in "float"           |
 | **[ft_log](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_log.c)**     | `double` x                    | Calculation of the logarithm of `x`                   |
 | **[ft_log10](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_log10.c)** | `double` x                    | Calculation of the logarithm of `x` to the base of 10 |
@@ -26,6 +27,7 @@ Example:
  * double	fmod(double x, double y);
  * double	log10(double x);
  * double	atan(double x);
+ * double	fabs(double x);
  * double	sqrt(double x);
  * double	log(double x);
  * double	sin(double x);
@@ -39,6 +41,7 @@ Example:
  * double	ft_fmod(register double x, register double y);
  * double	ft_log10(register double x);
  * double	ft_atan(register double x);
+ * double	ft_fabs(register double x);
  * double	ft_sqrt(register double x);
  * double	ft_log(register double x);
  * double	ft_sin(register double x);
