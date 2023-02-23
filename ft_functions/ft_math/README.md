@@ -10,8 +10,8 @@
 | **[ft_log](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_log.c)**     | `double` x                    | Calculation of the logarithm of `x`                   |
 | **[ft_log10](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_log10.c)** | `double` x                    | Calculation of the logarithm of `x` to the base of 10 |
 | **[ft_pow](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_pow.c)**     | `double` base, `double` power | Calculates the angle in radians for the quadrant      |
-| **[ft_sqrt](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_sqrt.c)**   | `double` x                    | Square root calculation of `x`                        |
 | **[ft_sin](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_sin.c)**     | `double` x                    | Returns the sine of `x`                               |
+| **[ft_sqrt](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_sqrt.c)**   | `double` x                    | Square root calculation of `x`                        |
 | **[ft_tan](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_tan.c)**     | `double` x                    | Returns the tangent of `x`. [sin(`x`) / cos(`x`)]     |
 
 Example:
