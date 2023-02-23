@@ -14,19 +14,25 @@
 # define PUSH_SWAP_H
 
 # include	"libft/ft_malloc/ft_malloc.h"
-# include	<stdlib.h>
+# include	<stdlib.h>/*
+# malloc();
+# free();
+# exit();
+*/
 # include	<stdio.h>
 # include	<unistd.h>
 
+void	*ft_memset(void *object, register int character, register int size);
 int		ft_strlen(const char *restrict string);
+int		ft_atoi(const char *restrict string);
 
 struct s_stacks
 {
-	int	*a;
-	int	*b;
-	int	size;
-	int	a_size;
-	int	b_size;
+	long	*a;
+	long	*b;
+	int		size;
+	int		a_size;
+	int		b_size;
 };
 
 void	sa(struct s_stacks *stack);
@@ -45,6 +51,13 @@ int		check_if_not_same(char *argv[]);
 int		check_if_only_numbers(char *argv[]);
 
 void	prepare_stacks(struct s_stacks *stack, char *argv[]);
+
 void	ai(struct s_stacks *stack);
+
+int		biggest_number_in_stack_a(struct s_stacks *stack);
+int		biggest_number_in_stack_b(struct s_stacks *stack);
+short	is_stack_shorted(struct s_stacks *stack);
+int		smalles_number_in_stack_a(struct s_stacks *stack);
+int		smalles_number_in_stack_b(struct s_stacks *stack);
 
 #endif

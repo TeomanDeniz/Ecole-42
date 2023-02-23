@@ -11,13 +11,17 @@
 /* ************************************************************************** */
 
 long long
-	ft_pow(register long long base, register signed int power)
+	ft_pow(register double base, register double power)
 {
-	register volatile signed int	i;
-	register volatile long long		x;
+	register int	i;
+	register double	x;
 
 	i = 1;
 	x = base;
+	if (power < 0 || (int)x == 0)
+		return (0);
+	if (power == 0)
+		return (1);
 	while (i++ < power)
 		base = base * x;
 	return (base);

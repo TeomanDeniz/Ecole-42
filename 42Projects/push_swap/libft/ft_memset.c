@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ai.c                                               :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 18:29:52 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/02/15 18:29:53 by hdeniz           ###   ########.fr       */
+/*   Created: 2022/12/06 16:28:42 by hdeniz            #+#    #+#             */
+/*   Updated: 2022/12/06 16:28:44 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../push_swap.h"
-
 void
-	ai(struct s_stacks *stack)
+	*ft_memset(void *object, register int character, register int size)
 {
-	printf("size= [%d]\n", stack->a_size);
-	pb(stack);
+	register int	counter;
+	char			*byte_pointer;
+
+	byte_pointer = object;
+	counter = -1;
+	while (++counter, counter < size)
+		byte_pointer[counter] = character;
+	return (object);
 }

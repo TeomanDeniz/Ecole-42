@@ -13,34 +13,33 @@
 #include	"../push_swap.h"
 
 static inline void
-	listing_a(struct s_stacks *stack, register int counter)
+	listing_a(struct s_stacks *stack)
 {
-	int	*a_temp;
+	register int	counter;
 
-	a_temp = (int *) ft_malloc(stack->a_size + 1);
-	while (counter++, counter < stack->a_size)
-			a_temp[counter + 1] = stack->a[counter];
-	a_temp[0] = stack->b[0];
-	stack->a = a_temp;
+	counter = (stack->a_size);
+	while (--counter, counter >= 0)
+		stack->a[(counter)] = stack->a[(counter - 1)];
+	stack->a[0] = stack->b[0];
 	stack->a_size += 1;
 }
 
 static inline void
-	listing_b(struct s_stacks *stack, register int counter)
+	listing_b(struct s_stacks *stack)
 {
-	int	*b_temp;
+	register int	counter;
 
-	b_temp = (int *) ft_malloc(stack->b_size - 1);
-	while (counter++, counter < stack->b_size)
-		b_temp[counter - 1] = stack->b[counter];
-	stack->b = b_temp;
+	counter = -1;
+	while (++counter, counter <= stack->b_size)
+		stack->b[(counter)] = stack->b[(counter + 1)];
+	stack->b[stack->b_size - 1] = 0;
 	stack->b_size -= 1;
 }
 
 void
 	pa(struct s_stacks *stack)
 {
-	listing_a(stack, -1);
-	listing_b(stack, 0);
+	listing_a(stack);
+	listing_b(stack);
 	write(1, "pa\n", 3);
 }

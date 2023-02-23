@@ -1,44 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cos.c                                           :+:      :+:    :+:   */
+/*   ft_sin.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 11:38:23 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/02/16 18:23:07 by hdeniz           ###   ########.fr       */
+/*   Updated: 2023/02/16 18:21:53 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static inline double
-	cos_fabs(long double input)
-{
-	if (input < 0)
-		return (input * (long double)-1);
-	return (input);
-}
-
-static inline double
-	cos_fmod(long double x, long double y)
-{
-	return (x - (long)(x / y) * y);
-}
+#include	"ft_math.h"
 
 double
-	ft_cos(double input)
+	ft_sin(register double input)
 {
-	long double		result;
-	long double		term;
-	register int	i;
+	register double			result;
+	register double			term;
+	register unsigned int	i;
 
-	result = 1.0;
-	term = 1.0;
-	i = 0;
-	input = cos_fmod(input, 2 * 3.14159265358979323846);
-	while (i++, cos_fabs(term) > 1e-10)
+	input = ft_fmod(input, 2 * M_PI);
+	i = 3;
+	term = input;
+	result = input;
+	while (ft_fabs(term) > 1E-15)
 	{
-		term = -term * input * input / (2 * i - 1) / (2 * i);
+		term = -term * input * input / (i * (i - 1));
 		result += term;
+		i += 2;
 	}
 	return (result);
 }

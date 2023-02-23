@@ -65,4 +65,3 @@ static inline void
 		return ((void *)_131072_());
 	return ((void *)_262144_());
 }
-

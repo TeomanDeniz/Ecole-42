@@ -30,15 +30,15 @@ int
 
 	if (argc >= 2)
 	{
-		counter = 0;
+		counter = -1;
 		if (check_if_only_numbers(argv))
 			return (ps_error(2));
 		if (check_if_not_same(argv))
 			return (ps_error(1));
 		prepare_stacks(&stacks, argv);
 		ai(&stacks);
-		while (++counter, counter < stack->size)
-			printf("%d\n", stack->a[counter]);
+		while (++counter, counter < stacks.size)
+			printf("%ld\n", stacks.a[counter]);
 		return (0);
 	}
 	return (ps_error(3));

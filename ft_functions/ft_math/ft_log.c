@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ai.c                                               :+:      :+:    :+:   */
+/*   ft_log.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 18:29:52 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/02/15 18:29:53 by hdeniz           ###   ########.fr       */
+/*   Created: 2023/02/19 20:35:52 by hdeniz            #+#    #+#             */
+/*   Updated: 2023/02/23 15:52:38 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../push_swap.h"
+#include	"ft_math.h"
 
-void
-	ai(struct s_stacks *stack)
+double
+	ft_log(register double x)
 {
-	printf("size= [%d]\n", stack->a_size);
-	pb(stack);
+	register int	counter;
+	register double	term;
+	register double	sum;
+	register double	z;
+
+	counter = 0;
+	sum = (x - 1) / (x + 1);
+	term = (x - 1) / (x + 1);
+	z = ((x - 1) / (x + 1)) * ((x - 1) / (x + 1));
+	while (++counter, ft_fabs(term / (2 * counter)) > 1E-15)
+	{
+		term *= z;
+		sum += term / (2 * counter + 1);
+	}
+	return (2 * sum);
 }

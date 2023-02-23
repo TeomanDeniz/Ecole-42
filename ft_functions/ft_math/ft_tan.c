@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ai.c                                               :+:      :+:    :+:   */
+/*   ft_tan.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 18:29:52 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/02/15 18:29:53 by hdeniz           ###   ########.fr       */
+/*   Created: 2023/02/23 15:58:09 by hdeniz            #+#    #+#             */
+/*   Updated: 2023/02/23 15:58:30 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../push_swap.h"
+#include	"ft_math.h"
 
-void
-	ai(struct s_stacks *stack)
+double
+	ft_tan(register double x)
 {
-	printf("size= [%d]\n", stack->a_size);
-	pb(stack);
+	return (ft_sin(x) / ft_cos(x));
 }

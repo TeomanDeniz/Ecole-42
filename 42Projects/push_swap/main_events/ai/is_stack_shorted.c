@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ai.c                                               :+:      :+:    :+:   */
+/*   is_stack_shorted.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 18:29:52 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/02/15 18:29:53 by hdeniz           ###   ########.fr       */
+/*   Created: 2023/02/17 18:30:09 by hdeniz            #+#    #+#             */
+/*   Updated: 2023/02/17 18:30:13 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../push_swap.h"
+#include	"../../push_swap.h"
 
-void
-	ai(struct s_stacks *stack)
+short
+	is_stack_shorted(struct s_stacks *stack)
 {
-	printf("size= [%d]\n", stack->a_size);
-	pb(stack);
+	register int	counter;
+
+	counter = -1;
+	while (++counter, counter < (stack->size - 1))
+		if (stack->a[counter] > stack->a[counter + 1])
+			return (0);
+	return (1);
 }

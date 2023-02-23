@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ai.c                                               :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 18:29:52 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/02/15 18:29:53 by hdeniz           ###   ########.fr       */
+/*   Created: 2023/02/23 17:03:31 by hdeniz            #+#    #+#             */
+/*   Updated: 2023/02/23 17:04:15 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../push_swap.h"
-
-void
-	ai(struct s_stacks *stack)
+double
+	ft_sqrt(register double x)
 {
-	printf("size= [%d]\n", stack->a_size);
-	pb(stack);
+	register double	guess;
+	register double	last_guess;
+
+	if (x <= 0.0)
+		return 0.0;
+	guess = x / 2.0;
+	last_guess = guess + 1.0;
+	while (guess != last_guess)
+	{
+		last_guess = guess;
+		guess = (guess + x / guess) / 2.0;
+	}
+	return (guess);
 }
