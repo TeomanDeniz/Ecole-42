@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-long long
+double
 	ft_pow(register double base, register double power)
 {
 	register int	i;
