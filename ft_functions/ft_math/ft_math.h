@@ -22,6 +22,7 @@ double	ft_atan2(register double y, register double x);
 double	ft_fmod(register double x, register double y);
 double	ft_log10(register double x);
 double	ft_atan(register double x);
+double	ft_fabs(register double x);
 double	ft_sqrt(register double x);
 double	ft_log(register double x);
 double	ft_sin(register double x);
