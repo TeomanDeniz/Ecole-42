@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_modf.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 17:03:31 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/02/23 17:04:15 by hdeniz           ###   ########.fr       */
+/*   Created: 2023/02/24 19:12:33 by hdeniz            #+#    #+#             */
+/*   Updated: 2023/02/24 19:12:35 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-double
-	ft_sqrt(register double x)
-{
-	register double	guess;
-	register double	last_guess;
+#include	"ft_math.h"
 
-	if (x <= 0.0)
-		return (0.0);
-	guess = x / 2.0;
-	last_guess = guess + 1.0;
-	while (guess != last_guess)
+double
+	my_modf(register double x, double *integer)
+{
+	register double	fractional;
+
+	if (isnan(x) || isinf(x))
 	{
-		last_guess = guess;
-		guess = (guess + x / guess) / 2.0;
+		*integer = x;
+		return (0.0);
 	}
-	return (guess);
+	fractional = (double)(x - (long)x);
+	integer = x - fractional;
+	return (fractional);
 }

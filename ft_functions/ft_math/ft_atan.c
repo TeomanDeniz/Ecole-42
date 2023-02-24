@@ -15,29 +15,26 @@
 double
 	ft_atan(register double x)
 {
-	register double	abs_x;
-	register double	result;
-	register int	counter;
-	register double	power;
+	register double	y;
 
-	abs_x = ft_fabs(x);
-	result = 0.0;
-	if (abs_x <= 1)
+	if (ft_isnan(x))
+		return (x);
+	if (x == 0.0)
+		return (0.0);
+	else if (x > 0.0)
 	{
-		counter = 0;
-		while (++counter, counter <= 15)
+		if (x > 1.0)
+			return (M_PI / 2 - ft_atan(1.0 / x));
+		else
 		{
-			power = (ft_pow(x, counter) / counter);
-			if (counter % 4 == 1)
-				result += power;
-			else
-				result -= power;
-			counter += 2;
+			y = (x * x);
+			return (x * (1.0 - \
+				y * (0.33333333333333333 - y * (0.20000000000000000 - \
+				y * (0.14285714285714285 - y * (0.11111111111111111 - \
+				y * (0.09090909090909091 - y * (0.07692307692307693) \
+				)))))));
 		}
-		return (result);
 	}
-	result = M_PI_2 - ft_atan(1 / abs_x);
-	if (x < 0)
-		result *= -1;
-	return (result);
+	else
+		return (-ft_atan(-x));
 }
