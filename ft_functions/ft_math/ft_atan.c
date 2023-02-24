@@ -22,22 +22,22 @@ double
 
 	abs_x = ft_fabs(x);
 	result = 0.0;
-	counter = 0;
-	if (!(abs_x <= 1))
+	if (abs_x <= 1)
 	{
-		result = M_PI_2 - ft_atan(1 / abs_x);
-		if (x < 0)
-			result *= -1;
+		counter = 0;
+		while (++counter, counter <= 15)
+		{
+			power = (ft_pow(x, counter) / counter);
+			if (counter % 4 == 1)
+				result += power;
+			else
+				result -= power;
+			counter += 2;
+		}
 		return (result);
 	}
-	while (++counter, counter <= 15)
-	{
-		power = (ft_pow(x, counter) / counter);
-		if (counter % 4 == 1)
-			result += power;
-		else
-			result -= power;
-		counter += 2;
-	}
+	result = M_PI_2 - ft_atan(1 / abs_x);
+	if (x < 0)
+		result *= -1;
 	return (result);
 }
