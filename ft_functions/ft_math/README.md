@@ -1,25 +1,55 @@
 # ft_math
 `ft_math.h` is a remake library from original `<math.h>` library.
 
-| Function Names                                                                                    | Function Parameters            | Description                                                         |
+# Trigonometric functions:
+| Function Name                                                                                     | Function Parameter(s)          | Description                                                         |
 | ------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
 | **[ft_atan](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_atan.c)**   | `double` x                     | Returns the arc tangent of `x`                                      |
-| **[ft_cos](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_cos.c)**     | `double` x                     | Returns the cosine of `x`                                           |
 | **[ft_atan2](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_atan2.c)** | `double` x, `double` y         | Calculate exponent of `base`                                        |
-| **[ft_fabs](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_fabs.c)**   | `double` x                     | Get the absolute value of a `x`                                     |
-| **[ft_fmod](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_fmod.c)**   | `double` x, `double` y         | Gets the modalities of 2 numbers in "float"                         |
-| **[ft_isinf](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_isinf.c)** | `double` x                     | Check if float number is inf number (Will also return -1 if "-inf") |
-| **[ft_isnan](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_isnan.c)** | `double` x                     | Check if float number is non number                                 |
+| **[ft_cos](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_cos.c)**     | `double` x                     | Returns the cosine of `x`                                           |
+| **[ft_sin](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_sin.c)**     | `double` x                     | Returns the sine of `x`                                             |
+| **[ft_tan](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_tan.c)**     | `double` x                     | Returns the tangent of `x`. [sin(`x`) / cos(`x`)]                   |
+
+# Hyperbolic functions:
+| Function Name                                                                                     | Function Parameter(s)          | Description                                                         |
+| ------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
+
+# Exponential and logarithmic functions:
+| Function Name                                                                                     | Function Parameter(s)          | Description                                                         |
+| ------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
 | **[ft_log](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_log.c)**     | `double` x                     | Calculation of the logarithm of `x`                                 |
 | **[ft_log10](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_log10.c)** | `double` x                     | Calculation of the logarithm of `x` to the base of 10               |
-| **[ft_pow](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_pow.c)**     | `double` base, `double` power  | Calculates the angle in radians for the quadrant                    |
-| **[ft_sin](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_sin.c)**     | `double` x                     | Returns the sine of `x`                                             |
-| **[ft_sqrt](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_sqrt.c)**   | `double` x                     | Square root calculation of `x`                                      |
-| **[ft_tan](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_tan.c)**     | `double` x                     | Returns the tangent of `x`. [sin(`x`) / cos(`x`)]                   |
+| **[ft_log1p](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_log1p.c)** | `double` x                     | Calculates the logarithm of one plus of `x`                         |
 | **[ft_modf](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_modf.c)**   | `double` x, `double` \*integer | Splits fraction an integer in float number (Returns fraction)       |
 
+# Power functions:
+| Function Name                                                                                     | Function Parameter(s)          | Description                                                         |
+| ------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
+| **[ft_pow](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_pow.c)**     | `double` base, `double` power  | Calculates the angle in radians for the quadrant                    |
+| **[ft_sqrt](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_sqrt.c)**   | `double` x                     | Square root calculation of `x`                                      |
 
-Example:
+# Other functions:
+| Function Name                                                                                     | Function Parameter(s)          | Description                                                         |
+| ------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
+| **[ft_fabs](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_fabs.c)**   | `double` x                     | Get the absolute value of a `x`                                     |
+| **[ft_fmod](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_fmod.c)**   | `double` x, `double` y         | Gets the modalities of 2 numbers in "float"                         |
+
+# Floating-point classification functions:
+| Function Name                                                                                     | Function Parameter(s)          | Description                                                         |
+| ------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
+| **[ft_isinf](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_isinf.c)** | `double` x                     | Check if float number is inf number (Will also return -1 if "-inf") |
+| **[ft_isnan](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_isnan.c)** | `double` x                     | Check if float number is non number                                 |
+
+# Constants:
+
+| Define Name                                                                                         | Value                                                                                              |
+| --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| **[M_PI](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L16)**    | `3.141592653589793`                                                                                |
+| **[M_PI_2](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L17)**  | `1.57079632679` (Aka: `M_PI / 2`)                                                                  |
+| **[M_PI_4](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L18)**  | `0.78539816339` (Aka: `M_PI / 4`)                                                                  |
+
+
+Example(s):
 ```c
 #include  <stdio.h> /*
  * int printf(char *str, ...);
@@ -31,6 +61,7 @@ Example:
  * double	atan2(double y, double x);
  * double	fmod(double x, double y);
  * double	log10(double x);
+ * double	log1p(double x);
  * double	atan(double x);
  * double	fabs(double x);
  * double	sqrt(double x);
@@ -49,6 +80,7 @@ Example:
  * double	ft_fmod(register double x, register double y);
  * double	ft_modf(register double x, double *integer);
  * double	ft_log10(register double x);
+ * double	ft_log1p(register double x);
  * double	ft_atan(register double x);
  * double	ft_fabs(register double x);
  * double	ft_sqrt(register double x);
@@ -64,7 +96,7 @@ Example:
 int main(void)
 {
 	double x = 42;
-	double y = 1;
+	double y = 5;
 
 	printf("[   sin(%d) = %f]\n", x, sin(x));
 	printf("[ft_sin(%d) = %f]\n", x, ft_sin(x));
@@ -74,6 +106,9 @@ int main(void)
 	printf("\n");
 	printf("[   tan(%d) = %f]\n", x, tan(x));
 	printf("[ft_tan(%d) = %f]\n", x, ft_tan(x));
+	printf("\n");
+	printf("[   log1p(%d) = %f]\n", x, log1p(x));
+	printf("[ft_log1p(%d) = %f]\n", x, ft_log1p(x));
 	printf("\n");
 	printf("[   log10(%d) = %f]\n", x, log10(x));
 	printf("[ft_log10(%d) = %f]\n", x, ft_log10(x));
