@@ -19,6 +19,8 @@ double
 	register double			term;
 	register unsigned int	i;
 
+	if (ft_isinf(x))
+		return (0.0 / 0.0);
 	result = 1.0;
 	term = 1.0;
 	i = 0;

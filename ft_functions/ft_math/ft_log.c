@@ -20,6 +20,8 @@ double
 	register double	sum;
 	register double	z;
 
+	if (ft_isinf(x) == 1)
+		return (1.0 / 0.0);
 	counter = 0;
 	sum = (x - 1) / (x + 1);
 	term = (x - 1) / (x + 1);

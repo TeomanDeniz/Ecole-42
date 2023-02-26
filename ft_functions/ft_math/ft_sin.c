@@ -13,19 +13,21 @@
 #include	"ft_math.h"
 
 double
-	ft_sin(register double input)
+	ft_sin(register double x)
 {
 	register double			result;
 	register double			term;
 	register unsigned int	i;
 
-	input = ft_fmod(input, 2 * M_PI);
+	if (ft_isinf(x))
+		return (0.0 / 0.0);
+	x = ft_fmod(x, 2 * M_PI);
 	i = 3;
-	term = input;
-	result = input;
+	term = x;
+	result = x;
 	while (ft_fabs(term) > 1E-15)
 	{
-		term = -term * input * input / (i * (i - 1));
+		term = -term * x * x / (i * (i - 1));
 		result += term;
 		i += 2;
 	}

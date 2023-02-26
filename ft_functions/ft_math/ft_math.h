@@ -122,7 +122,4 @@ double		cospi(double x);
 double		fmin(double x, double y);
 double		fmax(double x, double y);
 
-
-
-
 #endif

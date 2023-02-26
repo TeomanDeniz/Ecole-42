@@ -18,7 +18,9 @@ double
 	if (ft_isnan(x) || ft_isinf(x))
 	{
 		*integer = x;
-		return (0.0);
+		if (ft_isnan(x))
+			return (x);
+		return (0.0 * ft_isinf(x));
 	}
 	*integer = x - (double)(x - (long)x);
 	return ((double)(x - (long)x));

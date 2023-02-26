@@ -10,8 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include	"ft_math.h"
+
 double
 	ft_fmod(register double x, register double y)
 {
+	if (ft_isinf(x))
+		return (-0.0 / 0.0);
+	if (ft_isinf(y))
+		return (x);
 	return ((x) - ((long)(x / y)) * (y));
 }
