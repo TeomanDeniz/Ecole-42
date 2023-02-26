@@ -22,7 +22,7 @@ double
 	if (x == -1.0)
 		return (-1.0 / 0.0);
 	if (x < -1.0)
-		return(-0.0 / 0.0);
+		return (-0.0 / 0.0);
 	if (x < 1E-15)
 		return (x - 0.5 * x * x);
 	y = 1.0 + x;

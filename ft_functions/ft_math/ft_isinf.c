@@ -16,6 +16,6 @@ int
 	ft_isinf(register double x)
 {
 	if (x == (-1.0 / 0.0))
-		return ((!isnan(x) && isnan(x - x)) * -1);
-	return (!isnan(x) && isnan(x - x));
+		return ((!ft_isnan(x) && ft_isnan(x - x)) * -1);
+	return (!ft_isnan(x) && ft_isnan(x - x));
 }

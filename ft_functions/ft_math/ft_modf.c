@@ -15,14 +15,11 @@
 double
 	my_modf(register double x, double *integer)
 {
-	register double	fractional;
-
-	if (isnan(x) || isinf(x))
+	if (ft_isnan(x) || ft_isinf(x))
 	{
 		*integer = x;
 		return (0.0);
 	}
-	fractional = (double)(x - (long)x);
-	integer = x - fractional;
-	return (fractional);
+	*integer = x - (double)(x - (long)x);
+	return ((double)(x - (long)x));
 }
