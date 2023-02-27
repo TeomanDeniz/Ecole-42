@@ -13,35 +13,43 @@
 #include	"ft_math.h"
 
 static inline double
-	check_if_even(register double number)
+	base_or_power_is_inf(register double base, register double power)
 {
-	if ((long)number % 2)
-		return (1);
-	return (0);
+	if (power == 0)
+		return (1.0);
+	if (ft_isinf(power) == -1)
+		return (0.0);
+	if (ft_isinf(power))
+		return (power);
+	if (power < 0)
+		return (-0.0);
+	return (base);
+}
+
+static inline double
+	base_is_minus(register double base, register double power)
+{
+	if (ft_floor(power) == power)
+	{
+		if ((int)power % 2 == 0)
+			return (ft_pow(-base, power));
+		return (-ft_pow(-base, power));
+	}
+	return (-(0.0 / 0.0));
 }
 
 double
 	ft_pow(register double base, register double power)
 {
-	register int	i;
-	register double	x;
-
-	if (ft_isnan(base) || ft_isnan(power))
-		return (0.0 / 0.0);
-	if (power < 0)
-		return (-0.0);
-	if (power == 0)
-		return (1.0);
+	if (ft_isnan(base))
+		return (-(0.0 / 0.0));
+	if (ft_isnan(power))
+		return (power);
 	if (ft_isinf(base) || ft_isinf(power))
-	{
-		if (ft_isinf(base) == -1)
-			if (!ft_isinf(power) && check_if_even(power))
-				return (-1.0 / 0.0);
-		return (1.0 / 0.0);
-	}
-	i = 1;
-	x = base;
-	while (i++ < power)
-		base = base * x;
-	return (base);
+		return (base_or_power_is_inf(base, power));
+	if (power < 0)
+		return (1.0 / ft_pow(base, -power));
+	if (base < 0)
+		return (base_is_minus(base, power));
+	return (ft_exp(power * ft_log(base)));
 }

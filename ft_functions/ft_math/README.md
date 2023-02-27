@@ -15,10 +15,13 @@
 # Hyperbolic functions:
 | Function Name                                                                                     | Function Parameter(s)          | Description                                                         |
 | ------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
+| **[ft_sinh](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_sinh.c)**   | `double` x                     | Computes the hyperbolic sine of `x`                                 |
+| **[ft_cosh](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_sinh.c)**   | `double` x                     | Computes the hyperbolic cosine of `x`                               |
 
-# Exponential and logarithmic functions:
+# Exponential and Logarithmic functions:
 | Function Name                                                                                     | Function Parameter(s)          | Description                                                         |
 | ------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
+| **[ft_exp](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_exp.c)**     | `double` x                     | Computes e(2.71828) raised to the power of the given `x`            |
 | **[ft_log](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_log.c)**     | `double` x                     | Calculation of the logarithm of `x`                                 |
 | **[ft_log10](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_log10.c)** | `double` x                     | Calculation of the logarithm of `x` to the base of 10               |
 | **[ft_log1p](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_log1p.c)** | `double` x                     | Calculates the logarithm of one plus of `x`                         |
@@ -28,6 +31,11 @@
 | ------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
 | **[ft_pow](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_pow.c)**     | `double` base, `double` power  | Calculates the angle in radians for the quadrant                    |
 | **[ft_sqrt](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_sqrt.c)**   | `double` x                     | Square root calculation of `x`                                      |
+
+# Rounding and Remainder functions:
+| Function Name                                                                                     | Function Parameter(s)          | Description                                                         |
+| ------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
+| **[ft_floor](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_floor.c)** | `double` x                     | Returns the largest integer that is smaller than or equal to `x`    |
 
 # Floating-point classification functions:
 | Function Name                                                                                     | Function Parameter(s)          | Description                                                         |
