@@ -97,6 +97,16 @@ int		ft_ibil(unsigned int n, int b, char c);
 int		ft_printf(const char *(__), ...);
 int		ft_strlen(const char *string);
 int		ft_atoi(const char *string);
+
+//  FT_MATH.H
+
+int		ft_isnan(register double x);
+int		ft_isinf(register double x);
+
+//  FT_MATH.H
+
 // LIBFT FUNCTIONS
+
+
 
 #endif

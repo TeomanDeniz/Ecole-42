@@ -50,36 +50,52 @@ static inline long
 	return (ft_abs((long)((number - integer) * ft_pow(10, flags['.']))));
 }
 
-static inline void
-	f_main(double number, int *flags)
+static inline int
+	not_isnan_or_isinf(register double number, int *flags)
 {
-	long			fraction;
-	long			integer;
-	register int	checker;
-
-	fraction = 0;
-	integer = (long)number;
-	ft_putnbr_fd(integer, flags[0]);
-	if (flags['.'] != 0)
+	if (ft_isnan(number))
 	{
-		fraction = get_fraction(integer, number, flags);
-		if (fraction % 10 == 9)
-			fraction += 1;
-		ft_putchar_fd('.', flags[0]);
-		checker = zero_counter(number, flags, 1);
-		if (fraction != -1 && checker == 1)
-			ft_putnbr_fd(fraction, flags[0]);
-		flags[1] += ft_strlen(ft_itoa(integer)) + \
-			ft_strlen(ft_itoa(ft_abs(fraction)));
+		write(flags[0], "nan", 3);
+		flags[1] += 3;
+		return (0);
 	}
-	else
-		flags[1] += ft_strlen(ft_itoa(integer));
+	if (ft_isinf(number))
+	{
+		if (ft_isinf(number) == -1)
+			write(flags[0], "-", 1);
+		write(flags[0], "inf", 3);
+		flags[1] += 3 + (ft_isinf(number) == -1);
+		return (0);
+	}
+	return (1);
 }
 
 void
 	pf__f(double number, int *flags)
 {
+	long			fraction;
+	long			integer;
+	register int	checker;
+
 	pf_flag_event(flags, 'f', (void *)&number, 'a');
-	f_main(number, flags);
+	if (not_isnan_or_isinf(number, flags))
+	{
+		fraction = 0;
+		integer = (long)number;
+		ft_putnbr_fd(integer, flags[0]);
+		if (flags['.'] != 0)
+		{
+			fraction = get_fraction(integer, number, flags);
+			if (fraction % 10 == 9)
+				fraction += 1;
+			ft_putchar_fd('.', flags[0]);
+			checker = zero_counter(number, flags, 1);
+			if (fraction != -1 && checker == 1)
+				ft_putnbr_fd(fraction, flags[0]);
+			flags[1] += ft_strlen(ft_itoa(integer)) + \
+				ft_strlen(ft_itoa(ft_abs(fraction)));
+		}
+		flags[1] += ft_strlen(ft_itoa(integer));
+	}
 	pf_flag_event(flags, 'f', (void *)&number, 'b');
 }
