@@ -2,75 +2,90 @@
 `ft_math.h` is a remake library from original `<math.h>` library.
 
 # Trigonometric functions:
-| Function Name                                                                                     | Function Parameter(s)          | Description                                                         |
-| ------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
-| **[ft_sin](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_sin.c)**     | `double` x                     | Returns the sine of `x`                                             |
-| **[ft_cos](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_cos.c)**     | `double` x                     | Returns the cosine of `x`                                           |
-| **[ft_tan](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_tan.c)**     | `double` x                     | Returns the tangent of `x`. [sin(`x`) / cos(`x`)]                   |
-| **[ft_asin](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_asin.c)**   | `double` x                     | Returns the arc sine in radians. (1 ≥ x ≥ -1) [Aka: sin⁻¹(x)]       |
-| **[ft_acos](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_acos.c)**   | `double` x                     | Returns the arc cosine in radians. (1 ≥ x ≥ -1) [Aka: cos⁻¹(x)]     |
-| **[ft_atan](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_atan.c)**   | `double` x                     | Returns the arc tangent of `x`                                      |
-| **[ft_atan2](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_atan2.c)** | `double` x, `double` y         | Calculates the angle in radians for the quadrant                    |
+| Function Name                                                                                           | Function Parameter(s)          | Description                                                         |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
+| **[ft_sin](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_sin.c)**           | `double` x                     | Returns the sine of `x`                                             |
+| **[ft_cos](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_cos.c)**           | `double` x                     | Returns the cosine of `x`                                           |
+| **[ft_tan](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_tan.c)**           | `double` x                     | Returns the tangent of `x`. [sin(`x`) / cos(`x`)]                   |
+| **[ft_asin](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_asin.c)**         | `double` x                     | Returns the arc sine in radians. (1 ≥ x ≥ -1) [Aka: sin⁻¹(x)]       |
+| **[ft_acos](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_acos.c)**         | `double` x                     | Returns the arc cosine in radians. (1 ≥ x ≥ -1) [Aka: cos⁻¹(x)]     |
+| **[ft_atan](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_atan.c)**         | `double` x                     | Returns the arc tangent of `x`                                      |
+| **[ft_atan2](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_atan2.c)**       | `double` x, `double` y         | Calculates the angle in radians for the quadrant                    |
 
 # Hyperbolic functions:
-| Function Name                                                                                     | Function Parameter(s)          | Description                                                         |
-| ------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
-| **[ft_sinh](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_sinh.c)**   | `double` x                     | Computes the hyperbolic sine of `x`                                 |
-| **[ft_cosh](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_sinh.c)**   | `double` x                     | Computes the hyperbolic cosine of `x`                               |
+| Function Name                                                                                           | Function Parameter(s)          | Description                                                         |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
+| **[ft_sinh](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_sinh.c)**         | `double` x                     | Computes the hyperbolic sine of `x`                                 |
+| **[ft_cosh](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_sinh.c)**         | `double` x                     | Computes the hyperbolic cosine of `x`                               |
 
 # Exponential and Logarithmic functions:
-| Function Name                                                                                     | Function Parameter(s)          | Description                                                         |
-| ------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
-| **[ft_exp](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_exp.c)**     | `double` x                     | Computes e(2.71828) raised to the power of the given `x`            |
-| **[ft_log](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_log.c)**     | `double` x                     | Calculation of the logarithm of `x`                                 |
-| **[ft_log10](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_log10.c)** | `double` x                     | Calculation of the logarithm of `x` to the base of 10               |
-| **[ft_log1p](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_log1p.c)** | `double` x                     | Calculates the logarithm of one plus of `x`                         |
+| Function Name                                                                                           | Function Parameter(s)          | Description                                                         |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
+| **[ft_exp](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_exp.c)**           | `double` x                     | Computes e(2.71828) raised to the power of the given `x`            |
+| **[ft_log](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_log.c)**           | `double` x                     | Calculation of the logarithm of `x`                                 |
+| **[ft_log10](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_log10.c)**       | `double` x                     | Calculation of the logarithm of `x` to the base of 10               |
+| **[ft_log1p](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_log1p.c)**       | `double` x                     | Calculates the logarithm of one plus of `x`                         |
 
 # Power functions:
-| Function Name                                                                                     | Function Parameter(s)          | Description                                                         |
-| ------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
-| **[ft_pow](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_pow.c)**     | `double` base, `double` power  | Calculates the angle in radians for the quadrant                    |
-| **[ft_sqrt](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_sqrt.c)**   | `double` x                     | Square root calculation of `x`                                      |
+| Function Name                                                                                           | Function Parameter(s)          | Description                                                         |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
+| **[ft_pow](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_pow.c)**           | `double` base, `double` power  | Calculates the angle in radians for the quadrant                    |
+| **[ft_pow10](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_pow10.c)**       | `double` x                     | Calculate the exponent of 10 by `x`                                 |
+| **[ft_sqrt](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_sqrt.c)**         | `double` x                     | Square root calculation of `x`                                      |
 
 # Rounding and Remainder functions:
-| Function Name                                                                                     | Function Parameter(s)          | Description                                                         |
-| ------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
-| **[ft_floor](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_floor.c)** | `double` x                     | Returns the largest integer that is smaller than or equal to `x`    |
+| Function Name                                                                                           | Function Parameter(s)          | Description                                                         |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
+| **[ft_floor](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_floor.c)**       | `double` x                     | Returns the largest integer that is smaller than or equal to `x`    |
 
 # Floating-point classification functions:
-| Function Name                                                                                     | Function Parameter(s)          | Description                                                         |
-| ------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
-| **[ft_isinf](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_isinf.c)** | `double` x                     | Check if float number is inf number (Will also return -1 if "-inf") |
-| **[ft_isnan](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_isnan.c)** | `double` x                     | Check if float number is non number                                 |
+| Function Name                                                                                           | Function Parameter(s)          | Description                                                         |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
+| **[ft_isfinite](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_isfinite.c)** | `double` x                     | Check if number is not infinity                                     |
+| **[ft_isnormal](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_isnormal.c)** | `double` x                     | Check if number is normal to in use                                 |
+| **[ft_isinf](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_isinf.c)**       | `double` x                     | Check if float number is inf number (Will also return -1 if "-inf") |
+| **[ft_isnan](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_isnan.c)**       | `double` x                     | Check if float number is non number                                 |
+| **[ft_signbit](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_signbit.c)**   | `double` x                     | Checking if the float number is minus or not                        |
 
 # Other functions:
-| Function Name                                                                                     | Function Parameter(s)          | Description                                                         |
-| ------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
-| **[ft_fabs](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_fabs.c)**   | `double` x                     | Get the absolute value of a `x`                                     |
-| **[ft_fmod](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_fmod.c)**   | `double` x, `double` y         | Gets the modalities of 2 numbers in "float"                         |
-| **[ft_modf](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_modf.c)**   | `double` x, `double` \*integer | Splits fraction an integer in float number (Returns fraction)       |
+| Function Name                                                                                           | Function Parameter(s)          | Description                                                         |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
+| **[ft_fabs](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_fabs.c)**         | `double` x                     | Get the absolute value of a `x`                                     |
+| **[ft_fmod](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_fmod.c)**         | `double` x, `double` y         | Gets the modalities of 2 numbers in "float"                         |
+| **[ft_modf](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_modf.c)**         | `double` x, `double` \*integer | Splits fraction an integer in float number (Returns fraction)       |
 
 
 # Constants:
-| Define Name                                                                                             | Value                                                                                          |
-| ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| **[M_PI](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L27)**        | `3.14159265358979323846`                                                                       |
-| **[M_PI_2](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L29)**      | `1.57079632679489661923` (Aka: `M_PI / 2`)                                                     |
-| **[M_PI_4](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L31)**      | `0.78539816339744830961` (Aka: `M_PI / 4`)                                                     |
-| **[M_1_PI](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L33)**      | `0.31830988618379067153` (Aka: `1 / M_PI`)                                                     |
-| **[M_2_PI](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L35)**      | `0.63661977236758134307` (Aka: `2 / M_PI`)                                                     |
-| **[M_SQRT2](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L37)**     | `1.41421356237309504880` (Aka: `sqrt(2)`)                                                      |
-| **[M_SQRT1_2](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L39)**   | `0.707106781186547524401` (Aka: `1 / sqrt(2)`)                                                 |
-| **[M_2_SQRTPI](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L41)**  | `1.12837916709551257390` (Aka: `2 / sqrt(pi)`)                                                 |
-| **[M_E](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L17)**         | `2.71828182845904523536` (Aka: `Euler's number`)                                               |
-| **[M_LOG2E](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L19)**     | `1.44269504088896340736` (Aka: `log2(e)`)                                                      |
-| **[M_LOG10E](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L21)**    | `0.434294481903251827651` (Aka: `log10(e)`)                                                    |
-| **[M_LN2](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L23)**       | `0.693147180559945309417` (Aka: `ln(2)`)                                                       |
-| **[M_LN10](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L25)**      | `2.30258509299404568402` (Aka: `ln(10)`)                                                       |
+| Define Name                                                                                                 | Value                                                                                            |
+| ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| **[M_PI](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L113)**           | `3.14159265358979323846`                                                                         |
+| **[M_PI_2](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L116)**         | `1.57079632679489661923` (Aka: `M_PI / 2`)                                                       |
+| **[M_PI_4](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L119)**         | `0.78539816339744830961` (Aka: `M_PI / 4`)                                                       |
+| **[M_1_PI](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L122)**         | `0.31830988618379067153` (Aka: `1 / M_PI`)                                                       |
+| **[M_2_PI](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L125)**         | `0.63661977236758134307` (Aka: `2 / M_PI`)                                                       |
+| **[M_SQRT2](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L128)**        | `1.41421356237309504880` (Aka: `sqrt(2)`)                                                        |
+| **[M_SQRT1_2](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L131)**      | `0.707106781186547524401` (Aka: `1 / sqrt(2)`)                                                   |
+| **[M_2_SQRTPI](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L134)**     | `1.12837916709551257390` (Aka: `2 / sqrt(pi)`)                                                   |
+| **[M_E](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L98)**             | `2.71828182845904523536` (Aka: `Euler's number`)                                                 |
+| **[M_LOG2E](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L101)**        | `1.44269504088896340736` (Aka: `log2(e)`)                                                        |
+| **[M_LOG10E](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L104)**       | `0.434294481903251827651` (Aka: `log10(e)`)                                                      |
+| **[M_LN2](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L107)**          | `0.693147180559945309417` (Aka: `ln(2)`)                                                         |
+| **[M_LN10](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L110)**         | `2.30258509299404568402` (Aka: `ln(10)`)                                                         |
 
-double my_asin(register double x)
+# <float.h> Constants:
+| Define Name                                                                                                 | Value                                                                                            |
+| ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| **[FLT_MAX](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L141)**        | `3.40282347E+38F`                                                                                |
+| **[FLT_MIN](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L144)**        | `1.17549435E-38F`                                                                                |
+| **[FLT_EPSILON](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L147)**    | `1.19209290E-7F`                                                                                 |
+| **[DBL_MAX](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L152)**        | `1.7976931348623158E+308`                                                                        |
+| **[DBL_MIN](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L155)**        | `2.2250738585072014E-308`                                                                        |
+| **[DBL_EPSILON](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L158)**    | `2.2204460492503131E-16`                                                                         |
+| **[LDBL_MAX](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L163)**       | `1.18973149535723176502E+4932L`                                                                  |
+| **[LDBL_MIN](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L166)**       | `3.36210314311209350626E-4932L`                                                                  |
+| **[LDBL_EPSILON](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_math.h#L169)**   | `1.08420217248550443401E-19L`                                                                    |
 
-Example(s):
+# A Few Example(s):
 ```c
 #include  <stdio.h> /*
  * int printf(char *str, ...);

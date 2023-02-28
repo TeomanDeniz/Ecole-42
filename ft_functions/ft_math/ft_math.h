@@ -43,7 +43,7 @@ double		logb(double x);
 
 // Power functions:
 double		ft_pow(register double base, register double power);
-double		pow10(double x);
+double		ft_pow10(register double x);
 double		ft_sqrt(register double x);
 double		cbrt(double x);
 double		hypot(double x, double y);
@@ -65,11 +65,11 @@ double		nexttoward(double x, long double y);
 
 // Floating-point classification functions:
 int			fpclassify(double x);
-int			isfinite(double x);
-int			isnormal(double x);
+int			ft_isfinite(register double x);
+int			ft_isnormal(register double x);
 int			ft_isinf(register double x);
 int			ft_isnan(register double x);
-int			signbit(double x);
+int			ft_signbit(double x);
 
 // Other functions:
 double		ft_fabs(register double x);
@@ -133,6 +133,41 @@ double		fmax(double x, double y);
 # endif
 # ifndef M_2_SQRTPI
 #  define M_2_SQRTPI 1.12837916709551257390 // 2 / sqrt(PI)
+# endif
+
+// <float.h> Constants:
+
+// Limits of float type
+# ifndef FLT_MAX
+#  define FLT_MAX 3.40282347E+38F
+# endif
+# ifndef FLT_MIN
+#  define FLT_MIN 1.17549435E-38F
+# endif
+# ifndef FLT_EPSILON
+#  define FLT_EPSILON 1.19209290E-7F
+# endif
+
+// Limits of double type
+# ifndef DBL_MAX
+#  define DBL_MAX 1.7976931348623158E+308
+# endif
+# ifndef DBL_MIN
+#  define DBL_MIN 2.2250738585072014E-308
+# endif
+# ifndef DBL_EPSILON
+#  define DBL_EPSILON 2.2204460492503131E-16
+# endif
+
+// Limits of long double type
+# ifndef LDBL_MAX
+#  define LDBL_MAX 1.18973149535723176502E+4932L
+# endif
+# ifndef LDBL_MIN
+#  define LDBL_MIN 3.36210314311209350626E-4932L
+# endif
+# ifndef LDBL_EPSILON
+#  define LDBL_EPSILON 1.08420217248550443401E-19L
 # endif
 
 #endif
