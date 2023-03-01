@@ -17,11 +17,16 @@
 | ------------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
 | **[ft_sinh](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_sinh.c)**         | `double` x                     | Computes the hyperbolic sine of `x`                                 |
 | **[ft_cosh](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_sinh.c)**         | `double` x                     | Computes the hyperbolic cosine of `x`                               |
+| **[ft_tanh](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_tanh.c)**         | `double` x                     | Computes the hyperbolic tangent of `x`                              |
+| **[ft_asinh](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_asinh.c)**       | `double` x                     | Computes the arc hyperbolic sine of `x`                             |
+| **[ft_acosh](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_asinh.c)**       | `double` x                     | Computes the arc hyperbolic cosine of `x`                           |
+| **[ft_atanh](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_atanh.c)**       | `double` x                     | Computes the arc hyperbolic tangent of `x`                          |
 
 # Exponential and Logarithmic functions:
 | Function Name                                                                                           | Function Parameter(s)          | Description                                                         |
 | ------------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------- |
 | **[ft_exp](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_exp.c)**           | `double` x                     | Computes e(2.71828) raised to the power of the given `x`            |
+| **[ft_exp2](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_exp2.c)**         | `double` x                     | Computes `2` raised to the given power `x`                          |
 | **[ft_log](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_log.c)**           | `double` x                     | Calculation of the logarithm of `x`                                 |
 | **[ft_log10](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_log10.c)**       | `double` x                     | Calculation of the logarithm of `x` to the base of 10               |
 | **[ft_log1p](https://github.com/TeomanDeniz/Ecole-42/blob/main/ft_functions/ft_math/ft_log1p.c)**       | `double` x                     | Calculates the logarithm of one plus of `x`                         |
@@ -123,10 +128,6 @@ int main(void)
 	printf("[ft_atan2(%d, %d) = %f]\n", x, y, ft_atan2(x, y));
 	printf("\n\n");
 
-	printf("Hyperbolic functions:\n");
-	printf("\n\n");
-
-	printf("Exponential and logarithmic functions:\n");
 	printf("[   log(%d) = %f]\n", x, log(x));
 	printf("[ft_log(%d) = %f]\n", x, ft_log(x));
 	printf("\n");
@@ -145,7 +146,6 @@ int main(void)
 	printf("[ft_sqrt(%d) = %f]\n", x, ft_sqrt(x));
 	printf("\n\n");
 
-	printf("Floating-point classification functions:\n");
 	double nan = (0.0 / 0.0);
 	double inf = (1.0 / 0.0);
 	double minus_inf = (-1.0 / 0.0);

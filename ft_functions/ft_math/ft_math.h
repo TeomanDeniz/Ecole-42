@@ -25,14 +25,14 @@ double		ft_atan2(register double y, register double x);
 // Hyperbolic functions:
 double		ft_sinh(register double x);
 double		ft_cosh(register double x);
-double		tanh(double x);
-double		asinh(double x);
-double		acosh(double x);
-double		atanh(double x);
+double		ft_tanh(register double x);
+double		ft_asinh(register double x);
+double		ft_acosh(register double x);
+double		ft_atanh(register double x);
 
 // Exponential and logarithmic functions:
 double		ft_exp(register double x);
-double		exp2(double x);
+double		ft_exp2(register double x);
 double		expm1(double x);
 double		exp10(double x);
 double		ft_log(register double x);
