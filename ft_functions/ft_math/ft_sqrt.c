@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include	"ft_math.h"
+
 static inline double
 	sqrt_checker(register double x)
 {

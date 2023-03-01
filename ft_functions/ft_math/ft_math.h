@@ -11,88 +11,8 @@
 /* ************************************************************************** */
 
 #ifndef FT_MATH_H
-# define FT_MATH_H
 
-// Trigonometric functions:
-double		ft_sin(register double x);
-double		ft_cos(register double x);
-double		ft_tan(register double x);
-double		ft_asin(register double x);
-double		ft_acos(register double x);
-double		ft_atan(register double x);
-double		ft_atan2(register double y, register double x);
-
-// Hyperbolic functions:
-double		ft_sinh(register double x);
-double		ft_cosh(register double x);
-double		ft_tanh(register double x);
-double		ft_asinh(register double x);
-double		ft_acosh(register double x);
-double		ft_atanh(register double x);
-
-// Exponential and logarithmic functions:
-double		ft_exp(register double x);
-double		ft_exp2(register double x);
-double		expm1(double x);
-double		exp10(double x);
-double		ft_log(register double x);
-double		log2(double x);
-double		ft_log10(register double x);
-double		ft_log1p(register double x);
-double		logb(double x);
-
-// Power functions:
-double		ft_pow(register double base, register double power);
-double		ft_pow10(register double x);
-double		ft_sqrt(register double x);
-double		cbrt(double x);
-double		hypot(double x, double y);
-
-// Rounding and remainder functions:
-double		ceil(double x);
-double		ft_floor(register double x);
-double		trunc(double x);
-double		round(double x);
-long		lround(double x);
-long long	llround(double x);
-double		ft_fmod(register double x, register double y);
-double		remainder(double x, double y);
-double		remquo(double x, double y, int *quo);
-double		copysign(double x, double y);
-double		nan(const char *tagp);
-double		nextafter(double x, double y);
-double		nexttoward(double x, long double y);
-
-// Floating-point classification functions:
-int			fpclassify(double x);
-int			ft_isfinite(register double x);
-int			ft_isnormal(register double x);
-int			ft_isinf(register double x);
-int			ft_isnan(register double x);
-int			ft_signbit(double x);
-
-// Other functions:
-double		ft_fabs(register double x);
-double		ldexp(double x, int exp);
-double		frexp(double x, int *exp);
-double		ft_modf(register double x, double *integer);
-double		fma(double x, double y, double z);
-double		erf(double x);
-double		erfc(double x);
-double		lgamma(double x);
-double		tgamma(double x);
-double		j0(double x);
-double		j1(double x);
-double		jn(int n, double x);
-double		y0(double x);
-double		y1(double x);
-double		yn(int n, double x);
-double		scalbn(double x, int n);
-double		scalbln(double x, long int n);
-double		sinpi(double x);
-double		cospi(double x);
-double		fmin(double x, double y);
-double		fmax(double x, double y);
+# define FT_MATH_H 0.2
 
 // Constants:
 # ifndef M_E
@@ -169,5 +89,88 @@ double		fmax(double x, double y);
 # ifndef LDBL_EPSILON
 #  define LDBL_EPSILON 1.08420217248550443401E-19L
 # endif
+
+// Trigonometric functions:
+double		ft_sin(register double x);
+double		ft_cos(register double x);
+double		ft_tan(register double x);
+double		ft_asin(register double x);
+double		ft_acos(register double x);
+double		ft_atan(register double x);
+double		ft_atan2(register double y, register double x);
+
+// Hyperbolic functions:
+double		ft_sinh(register double x);
+double		ft_cosh(register double x);
+double		ft_tanh(register double x);
+double		ft_asinh(register double x);
+double		ft_acosh(register double x);
+double		ft_atanh(register double x);
+
+// Exponential and logarithmic functions:
+double		ft_exp(register double x);
+double		ft_exp2(register double x);
+double		ft_expm1(register double x);
+double		ft_exp10(register double x);
+double		ft_frexp(register double x, int *exponent);
+double		ft_log(register double x);
+double		ft_log2(register double x);
+double		ft_log10(register double x);
+double		ft_log1p(register double x);
+double		ft_logb(register double x);
+int			ft_ilogb(register double x);
+
+// Power functions:
+double		ft_pow(register double base, register double power);
+double		ft_pow10(register double x);
+double		ft_sqrt(register double x);
+double		cbrt(double x);
+double		hypot(double x, double y);
+
+// Rounding and remainder functions:
+double		ceil(double x);
+double		ft_floor(register double x);
+double		trunc(double x);
+double		round(double x);
+long		lround(double x);
+long long	llround(double x);
+double		ft_fmod(register double x, register double y);
+double		remainder(double x, double y);
+double		remquo(double x, double y, int *quo);
+double		copysign(double x, double y);
+double		nan(const char *tagp);
+double		nextafter(double x, double y);
+double		nexttoward(double x, long double y);
+
+// Floating-point classification functions:
+int			fpclassify(double x);
+int			ft_isfinite(register double x);
+int			ft_isnormal(register double x);
+int			ft_isinf(register double x);
+int			ft_isnan(register double x);
+int			ft_signbit(double x);
+
+// Other functions:
+double		ft_fabs(register double x);
+double		ldexp(double x, int exp);
+double		frexp(double x, int *exp);
+double		ft_modf(register double x, double *integer);
+double		fma(double x, double y, double z);
+double		erf(double x);
+double		erfc(double x);
+double		lgamma(double x);
+double		tgamma(double x);
+double		j0(double x);
+double		j1(double x);
+double		jn(int n, double x);
+double		y0(double x);
+double		y1(double x);
+double		yn(int n, double x);
+double		scalbn(double x, int n);
+double		scalbln(double x, long int n);
+double		sinpi(double x);
+double		cospi(double x);
+double		fmin(double x, double y);
+double		fmax(double x, double y);
 
 #endif

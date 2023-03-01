@@ -6,7 +6,7 @@
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 16:38:18 by hdeniz            #+#    #+#             */
-/*   Updated: 2022/12/29 11:23:54 by hdeniz           ###   ########.fr       */
+/*   Updated: 2023/03/01 17:08:54 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 static inline double
 	base_or_power_is_inf(register double base, register double power)
 {
-	if (power == 0)
-		return (1.0);
 	if (ft_isinf(power) == -1)
 		return (0.0);
 	if (ft_isinf(power))
@@ -41,6 +39,8 @@ static inline double
 double
 	ft_pow(register double base, register double power)
 {
+	if (power == 0.0)
+		return (1.0);
 	if (ft_isnan(base))
 		return (-(0.0 / 0.0));
 	if (ft_isnan(power))

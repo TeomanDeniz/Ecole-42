@@ -21,6 +21,7 @@ static inline double
 		return (x);
 	if (ft_isnan(x))
 		return (x);
+	return (x);
 }
 
 double

@@ -6,7 +6,7 @@
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 20:49:40 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/02/28 20:49:45 by hdeniz           ###   ########.fr       */
+/*   Updated: 2023/03/01 17:12:45 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 double
 	ft_pow10(register double x)
 {
-	if (ft_isnan(x) || ft_isinf(x))
+	if (ft_isnan(x) || ft_isinf(x) == 1)
 		return (x);
+	if (ft_isinf(x))
+		return (0.0);
 	if (x == 0)
 		return (1.0);
 	return (ft_pow(10.0, x));

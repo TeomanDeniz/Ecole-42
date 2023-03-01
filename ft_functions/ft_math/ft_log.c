@@ -6,7 +6,7 @@
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 20:35:52 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/02/23 15:52:38 by hdeniz           ###   ########.fr       */
+/*   Updated: 2023/03/01 18:05:38 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,28 @@
 double
 	ft_log(register double x)
 {
+	register double	result;
+	register double	denominator;
 	register int	counter;
-	register double	term;
-	register double	sum;
-	register double	z;
+	double			numerators[2];
 
-	if (ft_isinf(x) == 1)
-		return (1.0 / 0.0);
-	counter = 0;
-	sum = (x - 1) / (x + 1);
-	term = (x - 1) / (x + 1);
-	z = ((x - 1) / (x + 1)) * ((x - 1) / (x + 1));
-	while (++counter, ft_fabs(term / (2 * counter)) > 1E-15)
+	if (x < 0.0)
+		return (0.0 / 0.0);
+	if (x == 0.0)
+		return (-1.0 / 0.0);
+	if (ft_isinf(x) || ft_isnan(x))
+		return (x);
+	result = 0.0;
+	denominator = 1.0;
+	numerators[0] = (x - 1.0) / (x + 1.0);
+	numerators[1] = (numerators[0]) * (numerators[0]);
+	counter = 1;
+	while (ft_fabs(numerators[0] / (2 * counter)) > 1E-15)
 	{
-		term *= z;
-		sum += term / (2 * counter + 1);
+		result += numerators[0] / denominator;
+		numerators[0] *= numerators[1];
+		denominator += 2.0;
+		counter += 2;
 	}
-	return (2 * sum);
+	return (2.0 * result);
 }

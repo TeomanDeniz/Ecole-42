@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnormal.c                                      :+:      :+:    :+:   */
+/*   ft_ilogb.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/28 20:23:31 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/02/28 20:23:51 by hdeniz           ###   ########.fr       */
+/*   Created: 2023/03/01 20:17:46 by hdeniz            #+#    #+#             */
+/*   Updated: 2023/03/01 20:17:48 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"ft_math.h"
 
 int
-	ft_isnormal(register double x)
+	ft_ilogb(register double x)
 {
-	return (ft_isfinite(x) && x != 0 && ft_fabs(x) >= DBL_MIN);
+	if (ft_isnan(x) || x == 0)
+		return (0X80000000);
+	if (ft_isinf(x))
+		return (0X7FFFFFFF);
+	return ((int) ft_floor(ft_log2(ft_fabs(x))));
 }
