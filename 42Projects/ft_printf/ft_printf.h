@@ -42,7 +42,7 @@
 */
 
 // FT_PRINTF FUNCTIONS
-void	pf_flag_collector(const char *(__), int *x, int *flags, va_list v_args);
+void	pf_flag_collector(const char *(__), int *x, int *flags, va_list *args);
 void	pf_base_out(register long long number, const char *base, int *flags);
 void	pf_base_out_int(register int number, const char *base, int *flags);
 void	pf_flag_event(int *flags, char c, void *o, char p);
@@ -102,11 +102,10 @@ int		ft_atoi(const char *string);
 
 int		ft_isnan(register double x);
 int		ft_isinf(register double x);
+int		ft_signbit(double x);
 
 //  FT_MATH.H
 
 // LIBFT FUNCTIONS
-
-
 
 #endif
