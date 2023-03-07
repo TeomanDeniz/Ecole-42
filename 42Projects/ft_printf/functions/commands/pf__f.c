@@ -55,8 +55,10 @@ static inline int
 {
 	if (ft_isnan(number))
 	{
+		if (ft_signbit(number))
+			write(flags[0], "-", 1);
 		write(flags[0], "nan", 3);
-		flags[1] += 3;
+		flags[1] += 3 + ft_signbit(number);
 		return (0);
 	}
 	if (ft_isinf(number))
