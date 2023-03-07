@@ -71,7 +71,7 @@ static inline void
 }
 
 void
-	pf_flag_collector(const char *(__), int *x, int *flags, va_list *va_args)
+	pf_flag_collector(const char *(__), int *x, int *flags, va_list *args)
 {
 	register int	flag;
 
@@ -87,11 +87,11 @@ void
 		}
 		if (flag == '*')
 		{
-			flags[2] = get_star(flags, va_args);
+			flags[2] = get_star(flags, args);
 			*x += 1;
 		}
 		if (flag == '.')
-			dot_checker((__), x, flags, va_args);
+			dot_checker((__), x, flags, args);
 		if (flag >= '1' && flag <= '9')
 			margin_checker((__), x, flags);
 		flag = pf_perc_check((__), *x);
