@@ -6,7 +6,7 @@
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 16:37:39 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/03/19 19:30:40 by hdeniz           ###   ########.fr       */
+/*   Updated: 2023/03/19 19:32:40 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 void
 	space(int *flags, char c)
 {
-	if (!(c == 'd' || c == 'i') || !flags[' '] || flags['+'] \
-		|| flags[3])
+	if (!(c == 'd' || c == 'i') || !flags[' '] || flags['+'] || flags[3])
 		return ;
 	write(flags[0], " ", 1);
 	flags[1] += 1;
