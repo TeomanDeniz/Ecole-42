@@ -17,7 +17,7 @@ int ft_printf_fd(int fd, const char *(__), ...);
 | %x      | "*#-0.123456789"  | Output hexdecimal as integer   | var        | signed int             |
 | %X      | "*#-0.123456789"  | Output HEXDECIMAL as integer   | var        | signed int             |
 | %b      | "*#-0.123456789"  | Output binary as integer       | var        | signed int             |
-| %f      | "*-0.123456789"   | Output float or double         | var        | double, float          |
+| %f      | "*0+ -.123456789" | Output float or double         | var        | double, float          |
 | %n      |                   | Get len and save to variable   | &var       | int                    |
 | %p      | "*-0.123456789"   | Output hexdecimal as long long | var, &var  | *                      |
 | %%      | "*-0.123456789"   | Printf '%'                     |            |                        |
