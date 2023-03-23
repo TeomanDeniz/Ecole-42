@@ -16,9 +16,34 @@ void
 	sb(struct s_stacks *stack)
 {
 	register int	temp;
+	register int	counter;
 
+	counter = -1;
 	temp = stack->b[0];
 	stack->b[0] = stack->b[1];
 	stack->b[1] = temp;
-	write(1, "sb\n", 3);
+	if (MOVES)
+		write(1, "sb\n", 3);
+	if (LOG)
+	{
+		ft_printf("[A]-[B]\n");
+		while (++counter, counter < stack->size)
+			ft_printf(" %d - %d\n", stack->a[counter], stack->b[counter]);
+	}
 }
+
+/*
+
+[A]-[B]
+ 0 - 1
+ 0 - 2
+ 0 - 3
+
+SB
+
+[A]-[B]
+ 0 - 2
+ 0 - 1
+ 0 - 3
+
+*/

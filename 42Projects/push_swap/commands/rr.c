@@ -41,7 +41,33 @@ static inline void
 void
 	rr(struct s_stacks *stack)
 {
+	register int	counter;
+
+	counter = -1;
 	ss_ra(stack);
 	ss_rb(stack);
-	write(1, "rr\n", 3);
+	if (MOVES)
+		write(1, "rr\n", 3);
+	if (LOG)
+	{
+		ft_printf("[A]-[B]\n");
+		while (++counter, counter < stack->size)
+			ft_printf(" %d - %d\n", stack->a[counter], stack->b[counter]);
+	}
 }
+
+/*
+
+[A]-[B]
+ 1 - 4
+ 2 - 5
+ 3 - 6
+
+RR
+
+[A]-[B]
+ 2 - 5
+ 3 - 6
+ 1 - 4
+
+*/

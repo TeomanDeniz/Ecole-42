@@ -23,5 +23,29 @@ void
 	while (counter--, counter > 0)
 		stack->b[counter] = stack->b[counter - 1];
 	stack->b[0] = b_temp;
-	write(1, "rrb\n", 4);
+	if (MOVES)
+		write(1, "rrb\n", 4);
+	counter = -1;
+	if (LOG)
+	{
+		ft_printf("[A]-[B]\n");
+		while (++counter, counter < stack->size)
+			ft_printf(" %d - %d\n", stack->a[counter], stack->b[counter]);
+	}
 }
+
+/*
+
+[A]-[B]
+ 0 - 1
+ 0 - 2
+ 0 - 3
+
+RRB
+
+[A]-[B]
+ 0 - 3
+ 0 - 1
+ 0 - 2
+
+*/

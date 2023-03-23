@@ -6,15 +6,26 @@
 #    By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 23:15:03 by hdeniz            #+#    #+#              #
-#    Updated: 2023/01/11 17:12:59 by hdeniz           ###   ########.fr        #
+#    Updated: 2023/03/23 16:07:49 by hdeniz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	libftprintf.a
 CC			=	gcc
+# [COMPILER]
+
+NAME		=	libftprintf.a
+# [COMPILED LIBRARY FILE'S NAME (STATIC LINK LIBRARY)]
+
+SRC			=	$(eval SRC := $$(shell find . -type f ! -name $$(MAIN) -name "*.c"))$(SRC)
+# [FILES TO COMPILE]
+
+MAIN		=	main.c
+# [MAIN PRODUCT TO COMPILE]
+
 FLAGS		=	-Wall -Wextra -Werror
-SRC			=	$(shell find functions -type f -name '*.c') ft_printf.c
-OBJ			=	$(SRC:.c=.o)
+# [COMPILER FLAGS]
+
+OBJ			=	$(eval OBJ := $$(SRC:.c=.o))$(OBJ)
 N_FILES		:=	0
 FILES_N		:=	0
 
@@ -25,14 +36,11 @@ define progress_bar
 	$(eval PSEQ := $(shell seq 0 1 $(PLEFT) 2>/dev/null))
 	$(eval PEMPTY := $(shell if [ "$(1)" -ne "$(2)" ]; then printf "░%.0s" $(PSEQ); fi))
 	$(eval PFILL := $(shell printf "█%.0s" $(shell seq 1 $(PDONE))))
-	@printf "\r $(shell tput setaf 11)[$(shell tput setaf 14)$(PFILL)$(PEMPTY)$(shell tput setaf 11)] $(PBAR)%% - $(shell tput setaf 10)[$(1)/$(2)]$(shell tput setaf 11) [$(shell tput setaf 13)$(3)$(shell tput setaf 11)]                                             "
+	@printf "\r $(shell tput setaf 11)[$(shell tput setaf 14)$(PFILL)$(PEMPTY)$(shell tput setaf 11)] $(PBAR)%% - $(shell tput setaf 10)[$(1)/$(2)]$(shell tput setaf 11) [$(shell tput setaf 13)$(3)$(shell tput setaf 11)]                                    "
 endef
 
-all: $(NAME)
 a: all
-
-b: bonus
-bonus: $(NAME)
+all: $(NAME)
 
 %.o: %.c
 	$(eval FILES_N := $(shell echo $(FILES_N)+1 | bc))
@@ -41,8 +49,16 @@ bonus: $(NAME)
 
 $(NAME): files_n_calculator $(OBJ)
 	@ar -rcs $(NAME) $(OBJ)
+	@echo ""
+	@echo ""
 	@echo " $(shell tput setab 2)$(shell tput setaf 15)$(NAME) Done !$(shell tput sgr0)"
 	@echo ""
+	@if [ -a $(MAIN) ]; \
+	then \
+		$(CC) $(FLAGS) $(MAIN) $(NAME) -o $(MAIN:.c=); \
+		echo " $(shell tput setab 2)$(shell tput setaf 15)$(MAIN) Done !$(shell tput sgr0)" ; \
+		echo "" ; \
+	fi;
 
 c: clean
 clear: clear
@@ -55,17 +71,27 @@ clean:
 fc: fclean
 fclear: fclean
 fclean: clean
-	@rm -f $(NAME)
-	@echo ""
-	@echo " $(shell tput setab 1)$(shell tput setaf 11)$(NAME)$(shell tput setaf 15) and objective files are deleted$(shell tput sgr0)"
-	@echo ""
+	@if [ -a $(NAME) ]; \
+	then \
+		rm -f $(NAME) ; \
+		echo "" ; \
+		echo " $(shell tput setab 1)$(shell tput setaf 11)$(NAME)$(shell tput setaf 15) deleted$(shell tput sgr0)" ; \
+		echo "" ; \
+	fi;
+	@if [ -a $(MAIN:.c=) ]; \
+	then \
+		rm -f $(MAIN:.c=) ; \
+		echo "" ; \
+		echo " $(shell tput setab 1)$(shell tput setaf 11)$(MAIN:.c=)$(shell tput setaf 15) deleted$(shell tput sgr0)" ; \
+		echo "" ; \
+	fi;
 
 n: norminette
 norm: norminette
 norminette:
 	@echo ""
 	@echo "$(shell tput setab 10)$(shell tput setaf 0) Checking Norminette Rules $(shell tput sgr0)"
-	@norminette $(SRC)
+	@norminette *.c
 	@echo ""
 	@echo "$(shell tput setab 11)$(shell tput setaf 0) Checking Header Norminette Rules $(shell tput sgr0)"
 	@norminette -R CheckDefine *.h
@@ -76,6 +102,7 @@ files_n_calculator:
 	$(eval FILES_N := 0)
 	$(eval N_FILES := $(shell echo $(SRC) | wc -w | sed "s/ //g" | bc))
 
+r: fclean all
 re: fclean all
 
-.PHONY: all a clean clear c fclean fclear fc re norminette norm n bonus b
+.PHONY: all a clean clear c fclean fclear fc re r norminette norm n

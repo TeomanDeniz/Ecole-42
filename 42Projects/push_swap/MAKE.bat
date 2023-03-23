@@ -6,7 +6,7 @@
 ::   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        ..
 ::                                                +#+#+#+#+#+   +#+           ..
 ::   Created: 2022/12/09 23:15:03 by hdeniz            #+#    #+#             ..
-::   Updated: 2023/03/23 02:13:49 by hdeniz           ###   ########.fr       ..
+::   Updated: 2023/03/23 22:56:49 by hdeniz           ###   ########.fr       ..
 ::                                                                            ..
 :: ************************************************************************** ..
 
@@ -75,7 +75,6 @@ GOTO :EOF
 
 :M
 :MAIN
-	FOR %%# IN ("!MAIN!") DO SET "MAIN_NAME=%%~N#"
 	ECHO.
 	WHERE "AR">NUL 2>NUL
 	IF !ERRORLEVEL! NEQ 0 (
@@ -118,6 +117,7 @@ GOTO :EOF
 :Makefile
 	SET "MAKEFILE_PATH=%~0"
 	SET "#=UPDATE_LINE"
+	FOR %%# IN ("!MAIN!") DO SET "MAIN_NAME=%%~N#"
 	WHERE !CC!>NUL 2>NUL
 	IF %ERRORLEVEL% NEQ 0 GOTO :ERROR_COMPILER
 	FOR /F "DELIMS=#" %%# IN ('"PROMPT #$H# &ECHO ON &FOR %%# IN (1) DO REM"') DO (

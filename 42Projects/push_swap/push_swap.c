@@ -31,9 +31,13 @@ int
 		prepare_stacks(&stacks, argv);
 		if (is_stack_shorted_down(stacks.a, stacks.a_size))
 			return (0);
+		if (LOG)
+		{
+			ft_printf("[A]-[B]\n");
+			while (++counter, counter < stacks.size && LOG)
+				ft_printf(" %d - %d\n", stacks.a[counter], stacks.b[counter]);
+		}
 		ai(&stacks);
-		while (++counter, counter < stacks.size)
-			printf("%d\n", stacks.a[counter]);
 		return (0);
 	}
 	return (1);

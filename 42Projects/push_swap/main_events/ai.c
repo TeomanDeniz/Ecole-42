@@ -12,8 +12,6 @@
 
 #include	"../push_swap.h"
 
-static inline void	__short_3(struct s_stacks *s);
-
 void
 	ai(struct s_stacks *stack)
 {
@@ -24,29 +22,8 @@ void
 	}
 	if (stack->size == 3)
 	{
-		__short_3(stack);
+		short_a_three(stack);
 		return ;
 	}
-	short_a(stack, stack->size, 0);
-}
-
-static inline void
-	__short_3(struct s_stacks *s)
-{
-	if (1[s->a] < 2[s->a] && 0[s->a] < 2[s->a] && 0[s->a] > 1[s->a])
-		sa(s);
-	if (0[s->a] > 1[s->a] && 1[s->a] > 2[s->a] && 0[s->a] > 2[s->a])
-	{
-		sa(s);
-		rra(s);
-	}
-	if (0[s->a] > 2[s->a] && 1[s->a] < 2[s->a] && 0[s->a] > 1[s->a])
-		ra(s);
-	if (1[s->a] > 2[s->a] && 0[s->a] < 1[s->a] && 0[s->a] < 2[s->a])
-	{
-		sa(s);
-		ra(s);
-	}
-	if (0[s->a] > 2[s->a] && 1[s->a] > 2[s->a] && 0[s->a] < 1[s->a])
-		rra(s);
+	sort_a(stack, stack->size, 0);
 }

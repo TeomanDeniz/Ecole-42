@@ -18,10 +18,34 @@ void
 	register int	a_temp;
 	register int	counter;
 
-	counter = 0;
+	counter = -1;
 	a_temp = stack->a[0];
-	while (counter++, counter < stack->a_size)
+	while (++counter, counter < stack->a_size)
 		stack->a[counter - 1] = stack->a[counter];
 	stack->a[counter - 1] = a_temp;
-	write(1, "ra\n", 3);
+	if (MOVES)
+		write(1, "ra\n", 3);
+	counter = -1;
+	if (LOG)
+	{
+		ft_printf("[A]-[B]\n");
+		while (++counter, counter < stack->size)
+			ft_printf(" %d - %d\n", stack->a[counter], stack->b[counter]);
+	}
 }
+
+/*
+
+[A]-[B]
+ 1 - 0
+ 2 - 0
+ 3 - 0
+
+RA
+
+[A]-[B]
+ 2 - 0
+ 3 - 0
+ 1 - 0
+
+*/

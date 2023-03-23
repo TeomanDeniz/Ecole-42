@@ -17,6 +17,10 @@
 # ft_malloc();
 */
 
+# include	"libft/ft_printf/ft_printf.h"/*
+# ft_printf();
+*/
+
 # include	<stdlib.h>/*
 # malloc();
 # free();
@@ -27,7 +31,13 @@
 # write();
 */
 
-# include	<stdio.h>
+# ifndef LOG
+#  define LOG 1 // Output of extra analyses (Default: Disabled)
+# endif
+
+# ifndef MOVES
+#  define MOVES 1 // Command outputs (Default: Enabled)
+# endif
 
 void	*ft_memset(void *object, register int character, register int size);
 int		ft_strlen(const char *restrict string);
@@ -70,10 +80,7 @@ int		biggest_number_in_stack_b(struct s_stacks *stack);
 int		smalles_number_in_stack_a(struct s_stacks *stack);
 int		smalles_number_in_stack_b(struct s_stacks *stack);
 
-
-void	sort_3(struct s_stacks *stack, register int position);
-int		push(struct s_stacks *stack, int position, int operation);
-int		sort_small_b(struct s_stacks *s, register int position);
+void	short_a_three(struct s_stacks *s);
 int		get_mediane(int *pivot, int *stack, register int size);
 int		sort_b(struct s_stacks *stack, int position, int control);
 int		sort_a(struct s_stacks *stack, int position, int control);

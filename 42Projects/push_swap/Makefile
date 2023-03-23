@@ -6,16 +6,26 @@
 #    By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 23:15:03 by hdeniz            #+#    #+#              #
-#    Updated: 2023/02/12 15:07:49 by hdeniz           ###   ########.fr        #
+#    Updated: 2023/03/23 16:07:49 by hdeniz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	ft.a
-MAIN		=	push_swap.c
 CC			=	gcc
+# [COMPILER]
+
+NAME		=	ft.a
+# [COMPILED LIBRARY FILE'S NAME (STATIC LINK LIBRARY)]
+
+SRC			=	$(eval SRC := $$(shell find . -type f ! -name $$(MAIN) -name "*.c"))$(SRC)
+# [FILES TO COMPILE]
+
+MAIN		=	push_swap.c
+# [MAIN PRODUCT TO COMPILE]
+
 FLAGS		=	-Wall -Wextra -Werror
-SRC			=	$(shell find . -type f ! -name "$(MAIN)" -name "*.c")
-OBJ			=	$(SRC:.c=.o)
+# [COMPILER FLAGS]
+
+OBJ			=	$(eval OBJ := $$(SRC:.c=.o))$(OBJ)
 N_FILES		:=	0
 FILES_N		:=	0
 
@@ -92,6 +102,7 @@ files_n_calculator:
 	$(eval FILES_N := 0)
 	$(eval N_FILES := $(shell echo $(SRC) | wc -w | sed "s/ //g" | bc))
 
+r: fclean all
 re: fclean all
 
-.PHONY: all a clean clear c fclean fclear fc re norminette norm n
+.PHONY: all a clean clear c fclean fclear fc re r norminette norm n

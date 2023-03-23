@@ -19,7 +19,7 @@ static inline void
 
 	counter = (stack->a_size);
 	while (--counter, counter >= 0)
-		stack->a[(counter)] = stack->a[(counter - 1)];
+		stack->a[(counter + 1)] = stack->a[(counter)];
 	stack->a[0] = stack->b[0];
 	stack->a_size += 1;
 }
@@ -39,7 +39,33 @@ static inline void
 void
 	pa(struct s_stacks *stack)
 {
+	register int	counter;
+
+	counter = -1;
 	listing_a(stack);
 	listing_b(stack);
-	write(1, "pa\n", 3);
+	if (MOVES)
+		write(1, "pa\n", 3);
+	if (LOG)
+	{
+		ft_printf("[A]-[B]\n");
+		while (++counter, counter < stack->size)
+			ft_printf(" %d - %d\n", stack->a[counter], stack->b[counter]);
+	}
 }
+
+/*
+
+[A]-[B]
+ 4 - 1
+ 0 - 2
+ 0 - 3
+
+PA
+
+[A]-[B]
+ 1 - 2
+ 4 - 3
+ 0 - 0
+
+*/
