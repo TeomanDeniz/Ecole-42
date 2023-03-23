@@ -12,7 +12,7 @@
 
 #include	"../../ft_malloc.h"
 
-int
+char
 	*_16384_(void)
 {
 	static int	__;
@@ -32,7 +32,7 @@ int
 	return ((void *)0);
 }
 
-int
+char
 	*_32768_(void)
 {
 	static int	__;
@@ -52,7 +52,7 @@ int
 	return ((void *)0);
 }
 
-int
+char
 	*_65536_(void)
 {
 	static int	__;
@@ -72,7 +72,7 @@ int
 	return ((void *)0);
 }
 
-int
+char
 	*_131072_(void)
 {
 	static int	__;
@@ -92,7 +92,7 @@ int
 	return ((void *)0);
 }
 
-int
+char
 	*_262144_(void)
 {
 	static int	__;

@@ -13,13 +13,25 @@
 #include	"../../push_swap.h"
 
 short
-	is_stack_shorted(struct s_stacks *stack)
+	is_stack_shorted_down(int *stack, register int size)
 {
 	register int	counter;
 
 	counter = -1;
-	while (++counter, counter < (stack->size - 1))
-		if (stack->a[counter] > stack->a[counter + 1])
+	while (++counter, counter < (size - 1))
+		if (stack[counter] > stack[counter + 1])
+			return (0);
+	return (1);
+}
+
+short
+	is_stack_shorted_up(int *stack, register int size)
+{
+	register int	counter;
+
+	counter = 1 + size;
+	while (--counter, counter > 0)
+		if (stack[counter - 1] > stack[counter])
 			return (0);
 	return (1);
 }

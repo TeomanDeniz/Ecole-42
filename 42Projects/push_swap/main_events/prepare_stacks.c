@@ -30,8 +30,8 @@ static inline void
 				result++;
 		counter_characters = -1;
 	}
-	stack->a = (long *) ft_malloc(result);
-	stack->b = (long *) ft_malloc(result);
+	stack->a = (int *) ft_malloc(result);
+	stack->b = (int *) ft_malloc(result);
 }
 
 static inline void

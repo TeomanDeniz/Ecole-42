@@ -13,14 +13,21 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include	"libft/ft_malloc/ft_malloc.h"
+# include	"libft/ft_malloc/ft_malloc.h"/*
+# ft_malloc();
+*/
+
 # include	<stdlib.h>/*
 # malloc();
 # free();
 # exit();
 */
+
+# include	<unistd.h>/*
+# write();
+*/
+
 # include	<stdio.h>
-# include	<unistd.h>
 
 void	*ft_memset(void *object, register int character, register int size);
 int		ft_strlen(const char *restrict string);
@@ -28,11 +35,11 @@ int		ft_atoi(const char *restrict string);
 
 struct s_stacks
 {
-	long	*a;
-	long	*b;
-	int		size;
-	int		a_size;
-	int		b_size;
+	int	*a;
+	int	*b;
+	int	size;
+	int	a_size;
+	int	b_size;
 };
 
 void	sa(struct s_stacks *stack);
@@ -50,14 +57,25 @@ void	rrr(struct s_stacks *stack);
 int		check_if_not_same(char *argv[]);
 int		check_if_only_numbers(char *argv[]);
 
+short	is_stack_shorted_up(int *stack, register int size);
+short	is_stack_shorted_down(int *stack, register int size);
+
 void	prepare_stacks(struct s_stacks *stack, char *argv[]);
 
 void	ai(struct s_stacks *stack);
+int		short_a(struct s_stacks *stack, int len, register int recursive);
 
 int		biggest_number_in_stack_a(struct s_stacks *stack);
 int		biggest_number_in_stack_b(struct s_stacks *stack);
-short	is_stack_shorted(struct s_stacks *stack);
 int		smalles_number_in_stack_a(struct s_stacks *stack);
 int		smalles_number_in_stack_b(struct s_stacks *stack);
+
+
+void	sort_3(struct s_stacks *stack, register int position);
+int		push(struct s_stacks *stack, int position, int operation);
+int		sort_small_b(struct s_stacks *s, register int position);
+int		get_mediane(int *pivot, int *stack, register int size);
+int		sort_b(struct s_stacks *stack, int position, int control);
+int		sort_a(struct s_stacks *stack, int position, int control);
 
 #endif

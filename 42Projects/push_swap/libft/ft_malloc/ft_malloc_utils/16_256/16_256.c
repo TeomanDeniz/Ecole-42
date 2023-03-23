@@ -12,7 +12,7 @@
 
 #include	"../../ft_malloc.h"
 
-int
+char
 	*_16_(void)
 {
 	static int	__;
@@ -39,10 +39,10 @@ int
 		return (_16__128_(__));
 	if ((__) <= 256)
 		return (_16__256_(__));
-	return ((void *)0);
+	return (_16_2(__));
 }
 
-int
+char
 	*_32_(void)
 {
 	static int	__;
@@ -69,10 +69,10 @@ int
 		return (_32__128_(__));
 	if ((__) <= 256)
 		return (_32__256_(__));
-	return ((void *)0);
+	return (_32_2(__));
 }
 
-int
+char
 	*_64_(void)
 {
 	static int	__;
@@ -99,10 +99,10 @@ int
 		return (_64__128_(__));
 	if ((__) <= 256)
 		return (_64__256_(__));
-	return ((void *)0);
+	return (_64_2(__));
 }
 
-int
+char
 	*_128_(void)
 {
 	static int	__;
@@ -129,10 +129,10 @@ int
 		return (_128__128_(__));
 	if ((__) <= 256)
 		return (_128__256_(__));
-	return ((void *)0);
+	return (_128_2(__));
 }
 
-int
+char
 	*_256_(void)
 {
 	static int	__;
@@ -159,5 +159,5 @@ int
 		return (_256__128_(__));
 	if ((__) <= 256)
 		return (_256__256_(__));
-	return ((void *)0);
+	return (_256_2(__));
 }
