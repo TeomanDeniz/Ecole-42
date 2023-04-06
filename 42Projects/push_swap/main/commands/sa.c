@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sb.c                                               :+:      :+:    :+:   */
+/*   sa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 11:52:43 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/02/13 11:52:44 by hdeniz           ###   ########.fr       */
+/*   Created: 2023/02/13 11:52:40 by hdeniz            #+#    #+#             */
+/*   Updated: 2023/02/13 11:52:41 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../push_swap.h"
+#include	"../../push_swap.h"
 
 void
-	sb(struct s_stacks *stack)
+	sa(struct s_stacks *stack)
 {
 	register int	temp;
 	register int	counter;
 
 	counter = -1;
-	temp = stack->b[0];
-	stack->b[0] = stack->b[1];
-	stack->b[1] = temp;
+	temp = stack->a[0];
+	stack->a[0] = stack->a[1];
+	stack->a[1] = temp;
 	if (MOVES)
-		write(1, "sb\n", 3);
+		write(1, "sa\n", 3);
 	if (LOG)
 	{
-		ft_printf("[A]-[B]\n");
+		ft_printf("[A]-[B]\n|-   -|\n");
 		while (++counter, counter < stack->size)
 			ft_printf(" %d - %d\n", stack->a[counter], stack->b[counter]);
 	}
@@ -35,15 +35,15 @@ void
 /*
 
 [A]-[B]
- 0 - 1
- 0 - 2
- 0 - 3
+ 1 - 0
+ 2 - 0
+ 3 - 0
 
-SB
+SA
 
 [A]-[B]
- 0 - 2
- 0 - 1
- 0 - 3
+ 2 - 0
+ 1 - 0
+ 3 - 0
 
 */

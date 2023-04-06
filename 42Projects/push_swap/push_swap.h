@@ -32,11 +32,11 @@
 */
 
 # ifndef LOG
-#  define LOG 1 // Output of extra analyses (Default: Disabled)
+#  define LOG 0 // [0] Output of extra analyses
 # endif
 
 # ifndef MOVES
-#  define MOVES 1 // Command outputs (Default: Enabled)
+#  define MOVES 1 // [1] Command outputs
 # endif
 
 void	*ft_memset(void *object, register int character, register int size);
@@ -66,6 +66,7 @@ void	rrr(struct s_stacks *stack);
 
 int		check_if_not_same(char *argv[]);
 int		check_if_only_numbers(char *argv[]);
+int		check_int_limit(char *arg[]);
 
 short	is_stack_shorted_up(int *stack, register int size);
 short	is_stack_shorted_down(int *stack, register int size);

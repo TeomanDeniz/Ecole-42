@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../../push_swap.h"
+#include	"../../../push_swap.h"
 
 static inline int	sort_small_b(struct s_stacks *s, register int position);
 

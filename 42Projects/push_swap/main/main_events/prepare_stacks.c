@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../push_swap.h"
+#include	"../../push_swap.h"
 
 static inline void
 	open_sizes_for_stacks(struct s_stacks *stack, char **argv)
@@ -35,44 +35,56 @@ static inline void
 }
 
 static inline void
+	number_placer_3(char *s, struct s_stacks *stack, int *sc, int counter)
+{
+	s[counter] = '\0';
+	stack->a[*sc] = ft_atoi(s);
+	*sc += 1;
+}
+
+static inline void
 	number_placer_2(struct s_stacks *stack, char *argv, int *stack_counter)
 {
-	register int	argv_c;
+	register int	c;
 	register int	counter;
-	char			string[0X1000];
+	char			string[0XF];
 
-	argv_c = -1;
+	c = -1;
 	counter = 0;
-	while (++argv_c, argv_c <= ft_strlen(argv))
+	while (++c, c < ft_strlen(argv))
 	{
-		if ((argv[argv_c] >= '0' && argv[argv_c] <= '9') \
-			|| (argv[argv_c] == '-' \
-			&& (argv[argv_c + 1] >= '0' && argv[argv_c + 1] <= '9')))
-		{
-			string[counter] = argv[argv_c];
-			counter++;
-		}
+		if ((argv[c] >= '0' && argv[c] <= '9') || argv[c] == '-')
+			string[counter++] = (argv[c]);
 		else
 		{
-			string[counter] = '\0';
+			number_placer_3(string, stack, stack_counter, counter);
+			ft_memset(string, 0, 0XF);
 			counter = 0;
-			stack->a[*stack_counter] = ft_atoi(string);
-			ft_memset(string, 0, ft_strlen(string));
-			*stack_counter += 1;
+			while (argv[c] == ' ' || (argv[c] >= 9 && argv[c] <= 13))
+				c++;
+			c--;
 		}
+		if (counter == 0)
+			ft_memset(string, 0, 0XF);
 	}
+	if (counter > 0)
+		number_placer_3(string, stack, stack_counter, counter);
 }
 
 static inline int
 	number_placer(struct s_stacks *stack, char **argv)
 {
-	register int	argv_s;
+	register int	s;
 	int				stack_counter;
 
-	argv_s = 0;
+	s = 0;
 	stack_counter = 0;
-	while (++argv_s, argv_s[argv])
-		number_placer_2(stack, argv_s[argv], &stack_counter);
+	while (++s, s[argv])
+	{
+		while (*argv[s] == ' ' || (*argv[s] >= 9 && *argv[s] <= 13))
+			argv[s] += 1;
+		number_placer_2(stack, s[argv], &stack_counter);
+	}
 	return (stack_counter);
 }
 

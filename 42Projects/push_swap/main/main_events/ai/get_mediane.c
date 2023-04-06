@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../../push_swap.h"
+#include	"../../../push_swap.h"
 
 static inline void	sort_temp(int *temp_stack, register int size);
 
@@ -20,7 +20,7 @@ int
 	int				*tmp_stack;
 	register int	counter;
 
-	tmp_stack = (int *)ft_malloc(size * sizeof(int));
+	tmp_stack = (int *) ft_malloc(size * sizeof(int));
 	if (!tmp_stack)
 		return (0);
 	counter = -1;

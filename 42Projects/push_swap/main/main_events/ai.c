@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_stack_shorted_up.c                              :+:      :+:    :+:   */
+/*   ai.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 18:30:09 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/03/23 05:43:59 by hdeniz           ###   ########.fr       */
+/*   Created: 2023/02/15 18:29:52 by hdeniz            #+#    #+#             */
+/*   Updated: 2023/02/15 18:29:53 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"../../push_swap.h"
 
-short
-	is_stack_shorted_up(int *stack, register int size)
+void
+	ai(struct s_stacks *stack)
 {
-	register int	counter;
-
-	counter = 1 + size;
-	while (--counter, counter > 0)
-		if (stack[counter - 1] > stack[counter])
-			return (0);
-	return (1);
+	if (stack->size == 2)
+	{
+		sa(stack);
+		return ;
+	}
+	if (stack->size == 3)
+	{
+		short_a_three(stack);
+		return ;
+	}
+	sort_a(stack, stack->size, 0);
 }

@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../../push_swap.h"
-
-//https://github.com/Surfi89/push_swap/blob/main/src/push_swap/
+#include	"../../../push_swap.h"
 
 static inline void	sort_small_a(struct s_stacks *stack, register int position);
 

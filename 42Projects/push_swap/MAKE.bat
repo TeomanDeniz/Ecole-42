@@ -18,6 +18,7 @@ SETLOCAL ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
 ::PHONY RE R
 ::PHONY CLEAN CLEAR C
 ::PHONY FCLEAN FCLEAR FC
+::PHONY BONUS B
 
 SET "CC=GCC"
 REM [COMPILER]
@@ -28,8 +29,11 @@ REM [COMPILED LIBRARY FILE'S NAME (STATIC LINK LIBRARY)]
 SET "SRC=*.c"
 REM [FILES TO COMPILE]
 
-SET "MAIN=push_swap.c"
+SET "MAIN=main/push_swap.c"
 REM [MAIN PRODUCT TO COMPILE]
+
+SET "BONUS=bonus/checker.c"
+REM [BONUS FILE]
 
 SET "CFLAGS=-Wall -Wextra -Werror"
 REM [COMPILER FLAGS]
@@ -52,9 +56,9 @@ GOTO :EOF
 :NAME
 	ECHO.
 	FOR /R %%# IN (!SRC!) DO (
-		IF NOT "%%~XN#"=="!MAIN!" (
+		IF NOT "%%~XN#"=="push_swap.c" IF NOT "%%~XN#"=="checker.c" IF NOT "%%~XN#"=="random_number_generator.c" (
 			CALL :PROGRESS_BAR !PROGRESS! !SRC_FILE_NUM! "%%~N#.c"
-			IF NOT EXIST "%%~N#.o" IF NOT EXIST "!NAME!" !CC! !CFLAGS! -c %%# -o %%~n#.o||GOTO :ERROR
+			IF NOT EXIST "%%~N#.o" IF NOT EXIST "!NAME!" !CC! !CFLAGS! -c %%# -o %%~N#.o||GOTO :ERROR
 			SET /A PROGRESS+=1
 		)
 	)
@@ -89,6 +93,22 @@ GOTO :EOF
 	ECHO.
 GOTO :EOF
 
+:B
+:BONUS
+	CALL :NAME
+	WHERE "AR">NUL 2>NUL
+	IF !ERRORLEVEL! NEQ 0 (
+		ECHO  INFO: THIS WILL CAUSE SOME PROBLEMS ON YOUR PROGRAM.
+		ECHO        WE'RE GOING TO COMPILE "!BONUS!" MANUALLY WITHOUT "!NAME!"
+		!CC! !CFLAGS! !MAIN! "*.o" -o !MAIN_NAME!.exe||GOTO :ERROR
+	) ELSE (
+		!CC! !CFLAGS! !BONUS! !NAME! -o !BONUS_NAME!.exe||GOTO :ERROR
+	)
+	ECHO.
+	ECHO  INFO: !BONUS_NAME!.exe DONE!
+	ECHO.
+GOTO :EOF
+
 :R
 :RE
 	CALL :FCLEAR
@@ -112,12 +132,14 @@ GOTO :EOF
 		IF EXIST "%%~DP#%%~N#.a" DEL "%%~DP#%%~N#.a" & ECHO  %%~DP#%%~N#.a Deleted.
 	)
 	IF EXIST "!MAIN_NAME!.exe" DEL "!MAIN_NAME!.exe" & ECHO  !MAIN_NAME!.exe Deleted.
+	IF EXIST "!BONUS_NAME!.exe" DEL "!BONUS_NAME!.exe" & ECHO  !BONUS_NAME!.exe Deleted.
 GOTO :EOF
 
 :Makefile
 	SET "MAKEFILE_PATH=%~0"
 	SET "#=UPDATE_LINE"
 	FOR %%# IN ("!MAIN!") DO SET "MAIN_NAME=%%~N#"
+	FOR %%# IN ("!BONUS!") DO SET "BONUS_NAME=%%~N#"
 	WHERE !CC!>NUL 2>NUL
 	IF %ERRORLEVEL% NEQ 0 GOTO :ERROR_COMPILER
 	FOR /F "DELIMS=#" %%# IN ('"PROMPT #$H# &ECHO ON &FOR %%# IN (1) DO REM"') DO (
@@ -138,7 +160,7 @@ GOTO :EOF
 	IF NOT "%~1"=="" (
 		SET "PHONY=%~1"
 		FOR %%# IN ("a=A" "b=B" "c=C" "d=D" "e=E" "f=F" "g=G" "h=H" "i=I" "j=J" "k=K" "l=L" "m=M" "n=N" "o=O" "p=P" "q=Q" "r=R" "s=S" "t=T" "u=U" "v=V" "w=W" "x=X" "y=Y" "z=Z") DO (
-			SET PHONY=!PHONY:%%~#!
+			SET "PHONY=!PHONY:%%~#!"
 		)
 		IF "!PHONY!"=="!NAME_NAME!" (
 			IF EXIST "!NAME!" DEL "!NAME!"

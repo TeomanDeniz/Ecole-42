@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../push_swap.h"
+#include	"../../push_swap.h"
 
 static inline int
 	number_compare(int *numbers, register int len)

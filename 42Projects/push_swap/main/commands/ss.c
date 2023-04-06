@@ -1,54 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pb.c                                               :+:      :+:    :+:   */
+/*   ss.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 11:52:00 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/02/13 11:52:01 by hdeniz           ###   ########.fr       */
+/*   Created: 2023/02/13 11:52:47 by hdeniz            #+#    #+#             */
+/*   Updated: 2023/02/13 11:52:48 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../push_swap.h"
+#include	"../../push_swap.h"
 
 static inline void
-	listing_b(struct s_stacks *stack)
+	ss_sa(struct s_stacks *stack)
 {
-	register int	counter;
+	register int	temp;
 
-	counter = (stack->b_size);
-	while (--counter, counter >= 0)
-		stack->b[(counter + 1)] = stack->b[(counter)];
-	stack->b[0] = stack->a[0];
-	stack->b_size += 1;
+	temp = stack->a[0];
+	stack->a[0] = stack->a[1];
+	stack->a[1] = temp;
 }
 
 static inline void
-	listing_a(struct s_stacks *stack)
+	ss_sb(struct s_stacks *stack)
 {
-	register int	counter;
+	register int	temp;
 
-	counter = -1;
-	while (++counter, counter <= stack->a_size)
-		stack->a[(counter)] = stack->a[(counter + 1)];
-	stack->a[stack->a_size - 1] = 0;
-	stack->a_size -= 1;
+	temp = stack->b[0];
+	stack->b[0] = stack->b[1];
+	stack->b[1] = temp;
 }
 
 void
-	pb(struct s_stacks *stack)
+	ss(struct s_stacks *stack)
 {
 	register int	counter;
 
 	counter = -1;
-	listing_b(stack);
-	listing_a(stack);
+	ss_sa(stack);
+	ss_sb(stack);
 	if (MOVES)
-		write(1, "pb\n", 3);
+		write(1, "ss\n", 3);
 	if (LOG)
 	{
-		ft_printf("[A]-[B]\n");
+		ft_printf("[A]-[B]\n|-   -|\n");
 		while (++counter, counter < stack->size)
 			ft_printf(" %d - %d\n", stack->a[counter], stack->b[counter]);
 	}
@@ -58,14 +54,14 @@ void
 
 [A]-[B]
  1 - 4
- 2 - 0
- 3 - 0
+ 2 - 5
+ 3 - 6
 
-PB
+SS
 
 [A]-[B]
- 2 - 1
- 3 - 4
- 0 - 0
+ 2 - 5
+ 1 - 4
+ 3 - 6
 
 */

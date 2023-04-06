@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../../push_swap.h"
+#include	"../../../push_swap.h"
 
 void
 	short_a_three(struct s_stacks *s)

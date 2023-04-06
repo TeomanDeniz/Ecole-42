@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   rb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 11:52:40 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/02/13 11:52:41 by hdeniz           ###   ########.fr       */
+/*   Created: 2023/02/13 11:52:11 by hdeniz            #+#    #+#             */
+/*   Updated: 2023/02/13 11:52:12 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../push_swap.h"
+#include	"../../push_swap.h"
 
 void
-	sa(struct s_stacks *stack)
+	rb(struct s_stacks *stack)
 {
-	register int	temp;
+	register int	b_temp;
 	register int	counter;
 
 	counter = -1;
-	temp = stack->a[0];
-	stack->a[0] = stack->a[1];
-	stack->a[1] = temp;
+	b_temp = stack->b[0];
+	while (++counter, counter < stack->b_size)
+		stack->b[counter - 1] = stack->b[counter];
+	stack->b[counter - 1] = b_temp;
 	if (MOVES)
-		write(1, "sa\n", 3);
+		write(1, "rb\n", 3);
+	counter = -1;
 	if (LOG)
 	{
-		ft_printf("[A]-[B]\n");
+		ft_printf("[A]-[B]\n|-   -|\n");
 		while (++counter, counter < stack->size)
 			ft_printf(" %d - %d\n", stack->a[counter], stack->b[counter]);
 	}
@@ -35,15 +37,15 @@ void
 /*
 
 [A]-[B]
- 1 - 0
- 2 - 0
- 3 - 0
+ 0 - 1
+ 0 - 2
+ 0 - 3
 
-SA
+RB
 
 [A]-[B]
- 2 - 0
- 1 - 0
- 3 - 0
+ 0 - 2
+ 0 - 3
+ 0 - 1
 
 */

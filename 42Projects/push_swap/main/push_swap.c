@@ -10,10 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"push_swap.h"
+#include	"../push_swap.h"
 
 static inline int	not_uniq_error(void);
 static inline int	not_number_error(void);
+static inline int	not_valid_number(void);
 
 int
 	main(int argc, char *argv[])
@@ -28,6 +29,8 @@ int
 			return (not_number_error());
 		if (check_if_not_same(argv))
 			return (not_uniq_error());
+		if (check_int_limit(argv))
+			return (not_valid_number());
 		prepare_stacks(&stacks, argv);
 		if (is_stack_shorted_down(stacks.a, stacks.a_size))
 			return (0);
@@ -54,5 +57,12 @@ static inline int
 	not_number_error(void)
 {
 	write(1, " ERROR - ONLY NUMBERS ARE VALID\n", 32);
+	return (1);
+}
+
+static inline int
+	not_valid_number(void)
+{
+	write(1, " ERROR - ONE OF GIVEN NUMBER IS NOT VALID INTEGER\n", 50);
 	return (1);
 }

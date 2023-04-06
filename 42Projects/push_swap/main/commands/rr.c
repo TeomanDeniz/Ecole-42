@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../push_swap.h"
+#include	"../../push_swap.h"
 
 static inline void
 	ss_ra(struct s_stacks *stack)
@@ -50,7 +50,7 @@ void
 		write(1, "rr\n", 3);
 	if (LOG)
 	{
-		ft_printf("[A]-[B]\n");
+		ft_printf("[A]-[B]\n|-   -|\n");
 		while (++counter, counter < stack->size)
 			ft_printf(" %d - %d\n", stack->a[counter], stack->b[counter]);
 	}

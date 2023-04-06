@@ -16,14 +16,17 @@ CC			=	gcc
 NAME		=	ft.a
 # [COMPILED LIBRARY FILE'S NAME (STATIC LINK LIBRARY)]
 
-SRC			=	$(eval SRC := $$(shell find . -type f ! -name $$(MAIN) -name "*.c"))$(SRC)
+SRC			=	$(eval SRC := $$(shell find . -type f ! -name $$(MAIN) ! -name $$(BONUS) ! -name "random_number_generator.c" -name "*.c"))$(SRC)
 # [FILES TO COMPILE]
 
-MAIN		=	push_swap.c
+MAIN		=	main/push_swap.c
 # [MAIN PRODUCT TO COMPILE]
 
 FLAGS		=	-Wall -Wextra -Werror
 # [COMPILER FLAGS]
+
+BONUS		=	bonus/checker.c
+# [BONUS FILE]
 
 OBJ			=	$(eval OBJ := $$(SRC:.c=.o))$(OBJ)
 N_FILES		:=	0
@@ -56,6 +59,7 @@ $(NAME): files_n_calculator $(OBJ)
 	@if [ -a $(MAIN) ]; \
 	then \
 		$(CC) $(FLAGS) $(MAIN) $(NAME) -o $(MAIN:.c=); \
+		mv $(MAIN:.c=) "./push_swap"; \
 		echo " $(shell tput setab 2)$(shell tput setaf 15)$(MAIN) Done !$(shell tput sgr0)" ; \
 		echo "" ; \
 	fi;
@@ -78,11 +82,18 @@ fclean: clean
 		echo " $(shell tput setab 1)$(shell tput setaf 11)$(NAME)$(shell tput setaf 15) deleted$(shell tput sgr0)" ; \
 		echo "" ; \
 	fi;
-	@if [ -a $(MAIN:.c=) ]; \
+	@if [ -a "push_swap" ]; \
 	then \
-		rm -f $(MAIN:.c=) ; \
+		rm -f "push_swap" ; \
 		echo "" ; \
-		echo " $(shell tput setab 1)$(shell tput setaf 11)$(MAIN:.c=)$(shell tput setaf 15) deleted$(shell tput sgr0)" ; \
+		echo " $(shell tput setab 1)$(shell tput setaf 11)push_swap$(shell tput setaf 15) deleted$(shell tput sgr0)" ; \
+		echo "" ; \
+	fi;
+	@if [ -a "checker" ]; \
+	then \
+		rm -f "checker" ; \
+		echo "" ; \
+		echo " $(shell tput setab 1)$(shell tput setaf 11)checker$(shell tput setaf 15) deleted$(shell tput sgr0)" ; \
 		echo "" ; \
 	fi;
 
@@ -96,6 +107,13 @@ norminette:
 	@echo "$(shell tput setab 11)$(shell tput setaf 0) Checking Header Norminette Rules $(shell tput sgr0)"
 	@norminette -R CheckDefine *.h
 
+b: bonus
+bonus: $(NAME)
+	@$(CC) $(FLAGS) $(BONUS) $(NAME) -o $(BONUS:.c=)
+	@mv $(BONUS:.c=) "./checker"
+	@echo " $(shell tput setab 2)$(shell tput setaf 15)$(BONUS) Done !$(shell tput sgr0)"
+	@echo ""
+
 files_n_calculator:
 	@echo "$(shell tput sgr0)"
 	@echo ""
@@ -105,4 +123,4 @@ files_n_calculator:
 r: fclean all
 re: fclean all
 
-.PHONY: all a clean clear c fclean fclear fc re r norminette norm n
+.PHONY: all a clean clear c fclean fclear fc re r norminette norm n bonus b

@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   is_stack_shorted_up.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdeniz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/02 15:21:30 by hdeniz            #+#    #+#             */
-/*   Updated: 2023/01/02 15:22:28 by hdeniz           ###   ########.fr       */
+/*   Created: 2023/02/17 18:30:09 by hdeniz            #+#    #+#             */
+/*   Updated: 2023/03/23 05:43:59 by hdeniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	<unistd.h>
+#include	"../../../push_swap.h"
 
-void
-	ft_putchar_fd(char character, int fd)
+short
+	is_stack_shorted_up(int *stack, register int size)
 {
-	write(1, &character, fd);
-}
+	register int	counter;
 
-void
-	ft_putchar(char character)
-{
-	write(1, &character, 1);
+	counter = 1 + size;
+	while (--counter, counter > 0)
+		if (stack[counter - 1] > stack[counter])
+			return (0);
+	return (1);
 }
