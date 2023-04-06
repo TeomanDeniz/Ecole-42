@@ -19,16 +19,22 @@ int
 {
 	register int	x;
 	register int	y;
+	register int	counter;
 
 	x = 0;
 	y = -1;
+	counter = 0;
 	while (++x, arg[x])
 	{
-		while (++y, arg[x][y] || arg[x][y - 1])
+		while (++y, arg[x][y])
 			if (maintenance_work(arg[x][y]))
 				return (1);
 		y = -1;
 	}
+	while (arg[x - 1][counter])
+		++counter;
+	if (maintenance_work(arg[x - 1][counter]))
+		return (1);
 	return (0);
 }
 
