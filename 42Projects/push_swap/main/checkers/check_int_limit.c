@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 static inline int	maintenance_work(register char character);
 
 int
@@ -29,7 +27,7 @@ int
 		while (++y, arg[x][y])
 			if (maintenance_work(arg[x][y]))
 				return (1);
-		y = -1;
+		y = (maintenance_work(arg[x][y]), -1);
 	}
 	while (arg[x - 1][counter])
 		++counter;
@@ -48,7 +46,7 @@ static inline int
 	number = number + 0;
 	sign = sign + 0;
 	size = size + 0;
-	if ((number > 2147483647L + (long)sign) || size >= 11)
+	if ((number > 2147483647L + (long)sign))
 		return (1);
 	if (character == '-' || (character >= '0' && character <= '9'))
 	{
