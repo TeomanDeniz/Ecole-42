@@ -63,6 +63,6 @@ static inline int
 static inline int
 	not_valid_number(void)
 {
-	write(1, " ERROR - ONE OF GIVEN NUMBER IS NOT VALID INTEGER\n", 50);
+	write(1, " ERROR - INTEGER MUST BE BETWEEN 2147483647 & -2147483648\n", 58);
 	return (1);
 }

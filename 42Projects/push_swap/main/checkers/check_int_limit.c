@@ -41,24 +41,27 @@ int
 static inline int
 	maintenance_work(register char character)
 {
-	static long	number;
-	static char	sign;
+	static long		number;
+	static char		sign;
+	static short	size;
 
 	number = number + 0;
 	sign = sign + 0;
-	if (number > 2147483647L + (long)sign)
+	size = size + 0;
+	if ((number > 2147483647L + (long)sign) || size >= 11)
 		return (1);
 	if (character == '-' || (character >= '0' && character <= '9'))
 	{
 		if (character == '-')
 			sign = 1;
 		if (character >= '0' && character <= '9')
-			number = (long)((number * 10L) + (character & 0B1111L));
+			number = (long)((size++, number * 10L) + (character & 0B1111L));
 	}
 	else
 	{
 		sign = 0;
 		number = 0L;
+		size = 0;
 	}
 	return (0);
 }
