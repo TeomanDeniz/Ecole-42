@@ -12,6 +12,17 @@
 
 #include	"../../ft_printf.h"
 
+static inline int
+	number_len(register int number)
+{
+	int	counter;
+
+	counter = -1;
+	while (++counter, number)
+		number /= 10;
+	return (counter);
+}
+
 static inline long
 	zero_counter(double number, int *flags, int counter)
 {
@@ -94,10 +105,10 @@ void
 			checker = zero_counter(number, flags, 1);
 			if (fraction != -1 && checker == 1)
 				ft_putnbr_fd(fraction, flags[0]);
-			flags[1] += ft_strlen(ft_itoa(integer)) + \
-				ft_strlen(ft_itoa(ft_abs(fraction)));
+			flags[1] += number_len(integer) + \
+				number_len(ft_abs(fraction));
 		}
-		flags[1] += ft_strlen(ft_itoa(integer));
+		flags[1] += number_len(integer);
 	}
 	pf_flag_event(flags, 'f', (void *)&number, 'b');
 }
