@@ -63,7 +63,7 @@ static inline int
 	if (argv[coordinate] != ' ' \
 		&& argv[coordinate] != 9 && argv[coordinate] != 0)
 	{
-		number += (number * 10) + (argv[coordinate] & 0B1111);
+		number = (number * 10) + (argv[coordinate] & 0B1111);
 		if (argv[coordinate + 1])
 			return (0);
 	}
