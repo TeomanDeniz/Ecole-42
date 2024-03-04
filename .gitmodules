@@ -7,3 +7,6 @@
 [submodule "so_long"]
 	path = so_long
 	url = https://github.com/TeomanDeniz/so_long
+[submodule "philosophers"]
+	path = philosophers
+	url = https://github.com/TeomanDeniz/Philosophers
