@@ -10,3 +10,6 @@
 [submodule "philosophers"]
 	path = philosophers
 	url = https://github.com/TeomanDeniz/Philosophers
+[submodule "ft_math"]
+	path = ft_math
+	url = https://github.com/TeomanDeniz/ft_math
