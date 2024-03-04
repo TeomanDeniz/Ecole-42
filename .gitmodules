@@ -4,3 +4,6 @@
 [submodule "minishell"]
 	path = minishell
 	url = git@github.com:TeomanDeniz/Minishell.git
+[submodule "so_long"]
+	path = so_long
+	url = https://github.com/TeomanDeniz/so_long
