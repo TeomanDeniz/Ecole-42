@@ -1,3 +1,6 @@
 [submodule "ft_malloc"]
 	path = ft_malloc
 	url = https://github.com/TeomanDeniz/ft_malloc
+[submodule "minishell"]
+	path = minishell
+	url = git@github.com:TeomanDeniz/Minishell.git
