@@ -16,3 +16,6 @@
 [submodule "minitalk"]
 	path = minitalk
 	url = https://github.com/TeomanDeniz/Minitalk
+[submodule "libft"]
+	path = libft
+	url = https://github.com/TeomanDeniz/libft
